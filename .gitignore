@@ -1,0 +1,19 @@
+# Lo que baja `descargar_fuentes.py` de los organismos: no se versiona.
+datos/indec/
+datos/anexo2-lna-res1-2022-agosto/
+datos/anexo2-lna-res26-2022/
+datos/ncm_aec2017.pdf
+
+# Salida de la cadena: se regenera corriendo los programas.
+datos/panel_bk_ncm_mes.csv
+datos/ncm_descripciones.tsv
+datos/*.json
+!datos/FUENTES.json
+datos/ncm_aec2017_todas.txt
+datos/bk_posiciones_aec2017.txt
+datos/bit_posiciones_aec2017.txt
+datos/lna-transcripcion/bk_ruta_a_*.txt
+salida/
+
+__pycache__/
+*.pyc
