@@ -32,10 +32,6 @@ Dos archivos en `datos/regimen/` se pueden abrir directamente:
 | `regimen-lna-argentina.csv` | **4.201 posiciones** alcanzadas alguna vez por el régimen, con la fecha en que entraron y salieron, y la marca del arancel (BK/BIT) de cada una |
 | `bienes-de-capital-trayectorias.csv` | Las **1.211 posiciones de bienes de capital** de los capítulos 84 a 90, etiquetadas según su trayectoria: bajo licencia desde agosto de 2022, incorporadas en octubre, o nunca alcanzadas |
 
-⚠️ Ocho posiciones del listado de agosto **no** figuran en el de octubre: salieron
-del régimen en esa fecha y no en la abrogación general. El CSV lo refleja con su
-fecha de salida propia. Ninguna está marcada como bien de capital.
-
 Los dos son producto de los programas, no archivos sueltos: `construir_universo.py`
 los regenera desde los anexos transcriptos y avisa si difieren de los publicados.
 
