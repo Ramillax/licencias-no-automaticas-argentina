@@ -1,0 +1,281 @@
+porg,iso2,nombre_es
+101,BF,Burkina Faso
+102,DZ,Argelia
+103,BW,Botswana
+104,BI,Burundi
+105,CM,Camerún
+107,CF,República Centroafricana
+108,CG,"Congo, Rep. del"
+109,CD,"Congo, Rep. Democrática del "
+110,CI,Côte d'Ivoire (Costa de Marfil)
+111,TD,Chad
+112,BJ,Benin
+113,EG,Egipto
+115,GA,Gabón
+116,GM,Gambia
+117,GH,Ghana
+118,GN,Guinea
+119,GQ,Guinea Ecuatorial
+120,KE,Kenya
+121,LS,Lesotho
+122,LR,Liberia
+123,LY,Libia
+124,MG,Madagascar
+125,MW,Malawi
+126,ML,Mali
+127,MA,Marruecos
+128,MU,Mauricio
+129,MR,Mauritania
+130,NE,Níger
+131,NG,Nigeria
+132,ZW,Zimbabwe
+133,RW,Rwanda
+134,SN,Senegal
+135,SL,Sierra Leona
+136,SO,Somalia
+137,SZ,Eswatini (Swazilandia)
+138,SD,Sudán
+139,TZ,Tanzania
+140,TG,Togo
+141,TN,Túnez
+142,UG,Uganda
+144,ZM,Zambia
+145,QM,Territorios Vinculados al Reino Unido de Gran Bretaña e Irlanda del No(África)
+146,QN,Territorios Vinculados a España(África)
+147,QO,Territorios Vinculados a Francia(África)
+149,AO,Angola
+150,CV,Cabo Verde
+151,MZ,Mozambique
+152,SC,Seychelles
+153,DJ,Djibouti
+155,KM,Comoras
+156,GW,Guinea Bissau
+157,ST,Santo Tomé y Príncipe
+158,NA,Namibia
+159,ZA,Sudáfrica
+160,ER,Eritrea
+161,ET,Etiopía
+162,SD,Sudán
+163,SS,Sudán del Sur
+197,QP,Resto  (Africa)
+198,QQ,Indeterminado (África)
+199,QR,Sin Declarar  - Desconocido - Ignorado (África)
+200,AR,Argentina
+201,BB,Barbados
+202,BO,Bolivia
+203,BR,Brasil
+204,CA,Canadá
+205,CO,Colombia
+206,CR,Costa Rica
+207,CU,Cuba
+208,CL,Chile
+209,DO,República Dominicana
+210,EC,Ecuador
+211,SV,El Salvador
+212,US,Estados Unidos
+213,GT,Guatemala
+214,GY,Guyana
+215,HT,Haití
+216,HN,Honduras
+217,JM,Jamaica
+218,MX,México
+219,NI,Nicaragua
+220,PA,Panamá
+221,PY,Paraguay
+222,PE,Perú
+223,PR,Puerto Rico
+224,TT,Trinidad y Tobago
+225,UY,Uruguay
+226,VE,Venezuela
+227,QS,Territorios vinculados al Reino Unido de Gran Bretaña e Irlanda del No (América)
+228,GL,Territorios vinculados a Dinamarca (América)
+229,QT,Territorios vinculados a Francia (América)
+230,QU,Territorios Holandeses (América)
+231,VG,Territorios vinculados a Estados Unidos  (América)
+232,SR,Suriname
+233,DM,Dominica
+234,LC,Santa Lucía
+235,VC,San Vicente y las Granadinas
+236,BZ,Belice
+237,AG,Antigua y Barbuda
+238,KN,Saint Kitts y Nevis
+239,BS,Bahamas
+240,GD,Granada
+241,AN,Antillas Holandesas (territorio vinculado a Países Bajos)
+242,AW,Aruba
+243,BQ,"Bonaire, San Eustatius y Saba "
+244,CW,Curazao
+245,SX,San Martin (Parte holandesa)
+250,AR,Tierra del Fuego (Argentina)
+251,AR,La Plata (Buenos Aires - Argentina)
+252,AR,Justo Daract (San Luis - Argentina)
+253,AR,Río Gallegos (Santa Cruz - Argentina)
+254,FK,Islas Malvinas
+255,AR,Tucumán (Argentina)
+256,AR,Córdoba (Argentina)
+257,AR,Mendoza (Argentina)
+258,AR,General Pico (La Pampa - Argentina)
+259,AR,Comodoro Rivadavia (Chubut - Argentina)
+260,CL,Iquique (Chile)
+261,CL,Punta Arenas (Chile)
+262,AR,Salta (Argentina)
+263,AR,Paso de los Libres (Corrientes - Argentina)
+264,AR,Puerto Iguazú (Misiones - Argentina)
+265,QV,Sector Antártico Argentino
+266,AR,Coronel Rosales (Buenos Aires - Argentina)
+267,AR,ZF Concepción del Uruguay (Entre Ríos)
+268,AR,ZF Villa Constitución 
+269,AR,ZF Puerto Galbán
+270,PA,Colón (Panamá)
+271,BO,Winner - Zona Franca de Santa Cruz de la Sierra (Bolivia)
+272,CO,Zona Franca del Pacífico (Colombia)
+273,CR,Zona Franca Coyol Alajuela(Costa Rica)
+280,UY,Colonia (Uruguay)
+281,UY,Florida (Uruguay)
+282,UY,ZF LIBERTAD (URUGUAY)
+283,UY,Zonamerica (ex Montevideo) (Uruguay)
+284,UY,Nueva Helvecia - Colonia Suiza  (Uruguay)
+285,UY,Nueva Palmira (Uruguay)
+286,UY,ZF UPM FRAY BENTOS (EX RIO NEGRO) (URUGUAY)
+287,UY,Rivera (Uruguay)
+288,UY,San José (Uruguay)
+289,UY,Punta Pereira (Uruguay)
+290,UY,ZF PARQUE DE LAS CIENCIAS S.A. (URUGUAY)
+291,BR,Manaos (Brasil)
+295,QW,Mar Territorial Argentino y/o Zona Económica Exclusiva 
+296,QX,Ríos Nacionales Argentinos de Navegación Internacional
+297,QY,Resto (América)
+298,QZ,Indeterminado (América)
+299,XA,Sin Declarar - Desconocido - Ignorado (América)
+301,AF,Afganistán
+302,SA,Arabia Saudita
+303,BH,Bahrein
+304,MM,Myanmar
+305,BT,Bután
+306,KH,Camboya
+307,LK,Sri Lanka
+308,KP,"Corea (Norte), Rep. Popular Democrática de"
+309,KR,"Corea (Sur), Rep. de"
+310,CN,China
+312,PH,Filipinas
+313,TW,Taiwán
+314,PS,Gaza
+315,IN,India
+316,ID,Indonesia
+317,IQ,Iraq
+318,IR,Irán
+319,IL,Israel
+320,JP,Japón
+321,JO,Jordania
+322,QA,Qatar
+323,KW,Kuwait
+324,LA,Lao
+325,LB,Líbano
+326,MY,Malasia
+327,MV,Maldivas
+328,OM,Omán
+329,MN,Mongolia
+330,NP,Nepal
+331,AE,Emiratos Árabes Unidos
+332,PK,Pakistán
+333,SG,Singapur
+334,SY,Siria
+335,TH,Tailandia
+337,VN,Viet Nam
+341,HK,Hong Kong (China)
+344,MO,Macao (China)
+345,BD,Bangladesh
+346,BN,Brunei Darussalam
+348,YE,Yemen
+349,AM,Armenia
+350,AZ,Azerbaiyán
+351,GE,Georgia
+352,KZ,Kazajstán
+353,KG,Kirguistán
+354,TJ,Tayikistán
+355,TM,Turkmenistán
+356,UZ,Uzbekistán
+357,PS,Estado de Palestina
+358,TL,Timor Leste
+397,XB,Resto ( Asia )
+398,XC,Indeterminado ( Asia )
+399,XD,Sin Declarar - Desconocido - Ignorado (Asia)
+401,AL,Albania
+404,AD,Andorra
+405,AT,Austria
+406,BE,Bélgica
+407,BG,Bulgaria
+409,DK,Dinamarca
+410,ES,España
+411,FI,Finlandia
+412,FR,Francia
+413,GR,Grecia
+414,HU,Hungría
+415,IE,Irlanda
+416,IS,Islandia
+417,IT,Italia
+418,LI,Liechtenstein
+419,LU,Luxemburgo
+420,MT,Malta
+421,MC,Mónaco
+422,NO,Noruega
+423,NL,Países Bajos
+424,PL,Polonia
+425,PT,Portugal
+426,GB,Reino Unido
+427,RO,Rumania
+428,SM,San Marino
+429,SE,Suecia
+430,CH,Suiza
+431,VA,Santa Sede (Vaticano)
+433,GI,Territorios vinculados al Reino Unido de Gran Bretaña e Irlanda del No(Europa)
+435,CY,Chipre
+436,TR,Turquía
+438,DE,República Federal de Alemania
+439,BY,Belarús
+440,EE,Estonia
+441,LV,Letonia
+442,LT,Lituania
+443,MD,"Moldavia, República de"
+444,RU,Rusia Federación de
+445,UA,Ucrania
+446,BA,Bosnia y Herzegovina
+447,HR,Croacia
+448,SK,Eslovaquia
+449,SI,Eslovenia
+450,MK,Macedonia (ex República Yugoslava de)
+451,CZ,República Checa  
+452,RS,Federación Serbia Y Montenegro
+453,ME,Montenegro
+454,RS,Serbia
+497,XE,Resto (Europa)
+498,XF,Indeterminado (Europa)
+499,XG,Sin declarar (Europa)
+501,AU,Australia
+503,NR,Nauru
+504,NZ,Nueva Zelandia
+505,VU,Vanuatu
+506,WS,Samoa
+507,XH,Teritorios vinculados a Australia(Australia)
+508,PN,Teritorios vinculados al Reino Unido(Australia)
+509,XI,Teritorios vinculados a Francia(Australia)
+510,XJ,Teritorios vinculados a  Nueva Zelanda(Australia)
+511,XK,Teritorios vinculados a Estados Unidos(Australia)
+512,FJ,Fiji
+513,PG,Papua Nueva Guinea
+514,KI,Kiribati
+515,FM,"Micronesia, Estados Federados de"
+516,PW,Palau
+517,TV,Tuvalu
+518,SB,Islas Salomón
+519,TO,Tonga
+520,MH,Islas Marshall
+521,MP,Islas Marianas del Norte
+597,XL,Resto  (Oceanía)
+598,XM,Indeterminado (Oceanía)
+599,XN,Sin declarar (Oceanía)
+994,XO,Calamares
+996,XP,Exportaciones e Importaciones Simplificadas
+997,XQ,Productos Argentinos a Embajadas Extranjeras
+998,XR,Indeterminado (continente)
+999,ZZ,Confidencial

@@ -1,0 +1,8 @@
+# SHA-256 de los insumos que viajan dentro del paquete porque no se pueden
+# volver a derivar con solo Python. reproducir.py los comprueba al arrancar.
+# Generado por armar_paquete.py.
+1f1d09ce750fc0ab6e0daf44825ea0cd5ae81c6e2c20d8a676ea344adc29a583  datos/lna_agosto2022_ocr.txt
+48b4de8f7fc9b5a27b5a38168a9764cc111687e31ad540d5584944d0965b07d2  datos/lna_octubre2022_ocr.txt
+45c75fd002dcf8b0b9972065feb9988721b958b27a00f0ff698eddde50f72622  datos/ncm_aec2017_layout.txt
+6841a2f4c3af8cee754ea4c378d054515d0f0d555efda1e9428d16a5b309644d  datos/referencia/paises_indec.csv
+a261bfebf865561072758920177b17e1f4bb0ef52dd3a819f419790513594312  datos/lna-transcripcion/lna_ch84_90.txt

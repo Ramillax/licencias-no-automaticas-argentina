@@ -1,0 +1,930 @@
+{
+ "descripcion": "Fuentes primarias del trabajo. Cada archivo se descarga de su organismo de origen y se verifica por SHA-256 contra esta lista. El hash fija la EDICIÓN usada: el INDEC republica el archivo del año en curso a medida que cierra meses nuevos, de modo que un enlace que responde 200 no garantiza el mismo contenido. Bajado originalmente el 2026-08-07.",
+ "archivos": {
+  "datos/indec/imports_2021_M.zip": {
+   "sha256": "fb4e08a017b433da2fd4c55d953ad6992d2c86506f94ea8cd35a758acac3b745",
+   "bytes": 7237367,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2021_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/indec/imports_2022_M.zip": {
+   "sha256": "06b6119f7a7ba49ce049388d63c92737f59b56abb689ff1681fc198ec50797d3",
+   "bytes": 7221350,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2022_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/indec/imports_2023_M.zip": {
+   "sha256": "1988aceadbd3948013ab4d6ea0c9df2d584c9fc4f2fe61940aea598c0dbeb1f0",
+   "bytes": 6619425,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2023_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/indec/imports_2024_M.zip": {
+   "sha256": "b7064744a85a9861b32649926ceb48dff15753763be89061ebf2c45b6e2a9c13",
+   "bytes": 6895174,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2024_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/indec/imports_2025_M.zip": {
+   "sha256": "5957a167f92afaa5f0585108678eb76a1550010fc7ab0347a9f1179129248f26",
+   "bytes": 7668194,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2025_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/indec/imports_2026_M.zip": {
+   "sha256": "7cd1320401e60af254ec1b670f906bc65aa9a6e2303ae4e6c3229e05ecc7d5b9",
+   "bytes": 4095494,
+   "url": "https://comex.indec.gob.ar/files/zips/imports_2026_M.zip",
+   "fuente": "INDEC — Comercio Exterior"
+  },
+  "datos/ncm_aec2017.pdf": {
+   "sha256": "0b022b070637fd3351da9e8fb0ac4deeedda8a8c8fb70c12732fe77acbf644e9",
+   "bytes": 3892050,
+   "url": "https://www.argentina.gob.ar/sites/default/files/nomenclatura_comun_del_mercosur_ncm.pdf",
+   "fuente": "Arancel Externo Común (NCM 2017, VI Enmienda)"
+  },
+  "datos/anexo2-lna-res26-2022/p1.jpg": {
+   "sha256": "e208b241d2400139f82fda9c700a4e60ff784139020e60fa4bcf787a1830437f",
+   "bytes": 89691,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-1_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p2.jpg": {
+   "sha256": "3540213dc771b9e243680b844e97bc3c8f2d14f3c06bd0edcf71696398996e8d",
+   "bytes": 111871,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-2_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p3.jpg": {
+   "sha256": "4623e2c6a71fcb56737bdd745ceef6338bf24b29795835ac370bb2804861b712",
+   "bytes": 145670,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-3_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p4.jpg": {
+   "sha256": "320900e365199264fe50c103d370c9c61660700fecb5d26cd5be851bc05730b3",
+   "bytes": 163834,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-4_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p5.jpg": {
+   "sha256": "f8eee79580a00d4f059e71b5ef4a0e4869b4095a0a09b1a47f4e7581de8216c2",
+   "bytes": 123679,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-5_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p6.jpg": {
+   "sha256": "912ed6773c881d69ca87ea651d833a91a013b5025ea8c4d0adb78747bf305929",
+   "bytes": 106597,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-6_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p7.jpg": {
+   "sha256": "e381cbcb132b22f67b8341b23e2a24a8fb1ff78b20181c3ca10a9b1b2acd87ae",
+   "bytes": 107264,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-7_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p8.jpg": {
+   "sha256": "35a8b688d9879d4369601715b853306039730961e4a157117463a5ece888c97e",
+   "bytes": 107422,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-8_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p9.jpg": {
+   "sha256": "cb7606f39d1ccf576da8a74aa16e634987079e9d233feda972ebaf3899097ecc",
+   "bytes": 106432,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-9_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p10.jpg": {
+   "sha256": "8d6df81146a3290bb2a73fe1459fb9991e2d0dba3b6209631f95c8f2c185e528",
+   "bytes": 107507,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-10_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p11.jpg": {
+   "sha256": "8690a82d949db70cc62b14ac5e3ad9f5c56c8e807cd8b1c2e613f768dd7de70b",
+   "bytes": 107343,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-11_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p12.jpg": {
+   "sha256": "4744b13854ca3cd1105f6ce1db843bd7978ba65c11438a657a93d8e4041f1629",
+   "bytes": 106542,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-12_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p13.jpg": {
+   "sha256": "7aba4598e3683ff80c6082099a3aede71094d142da26e3394c117b9157dba1b2",
+   "bytes": 106260,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-13_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p14.jpg": {
+   "sha256": "152c6dfbc7dc1375e1bad72bd66e6f5e87e984c40233ae1aba885987485a3e79",
+   "bytes": 107014,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-14_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p15.jpg": {
+   "sha256": "674378294491a27dbad8ab7a353ee7c386d865eb72a59fe776984b4a23084aa5",
+   "bytes": 106396,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-15_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p16.jpg": {
+   "sha256": "c746a34521968f17b86c94f5e019547a3a22ab04eae413a2c633dfe0fc5a9479",
+   "bytes": 106159,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-16_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p17.jpg": {
+   "sha256": "b66be293357990fbbaa45f7a6f47d2b66e2d667ea9b8073f23b60423081b9533",
+   "bytes": 106152,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-17_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p18.jpg": {
+   "sha256": "e76002e244295cccb2035b36bee49b3d45dc0036dc8e87a3992f1cfb88bce62a",
+   "bytes": 106518,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-18_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p19.jpg": {
+   "sha256": "5b910d50043fb98681eb432b78c7eb48428901fedb9be523b4bf40d159189904",
+   "bytes": 106446,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-19_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p20.jpg": {
+   "sha256": "501ac9938269fe7d0c2d63578a9d2def9155ae465470976f9cbd1b72cbaad87a",
+   "bytes": 106196,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-20_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p21.jpg": {
+   "sha256": "8674b18bb4c6358a50987034b2f9a259ba3dee4b9d5fc75e882fa9a451c4df70",
+   "bytes": 106274,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-21_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p22.jpg": {
+   "sha256": "e2a9b619c1bb911778c1bab8bb5eb17d7fe8dfea9eb88de32cfb44d236ce1cb7",
+   "bytes": 106298,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-22_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p23.jpg": {
+   "sha256": "d5cfb5b08ddb9cc8be6e4f8dae2ff045f934f8c9d5569290461de23141e1c3cc",
+   "bytes": 106702,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-23_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p24.jpg": {
+   "sha256": "5de79a08d8abeac2adb9e978b6dbf0e7137efadbb505d9d8cd2fe3c75e00f97b",
+   "bytes": 107143,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-24_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p25.jpg": {
+   "sha256": "3d40f03974f0d9a82a9aeb3f63a59bbd8dd30227abe510243fb71b09dd69861b",
+   "bytes": 107197,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-25_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p26.jpg": {
+   "sha256": "6b71373d79c72af9c1f896f0a09eb462ae34b6eb4a417ac94771e4df7875539a",
+   "bytes": 107427,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-26_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p27.jpg": {
+   "sha256": "4b546fcdaa84dd058eb59e7da1535f453a3db93b14b2681f8229ccf9672bfef2",
+   "bytes": 108002,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-27_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p28.jpg": {
+   "sha256": "ce0a22ebcc7f2dfe3c0029ba5b3dead210b5cc124347f8239ee9c3ef58d658ac",
+   "bytes": 107346,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-28_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p29.jpg": {
+   "sha256": "33804c3848f7f47207c527bd2b262f4e471995c9df63bbfd50ec890c509e29b7",
+   "bytes": 106959,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-29_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p30.jpg": {
+   "sha256": "c2cb01ba3deea56b31d2b91ef90319098f30c599fa549f8f54d4b705bf7c2d93",
+   "bytes": 107445,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-30_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p31.jpg": {
+   "sha256": "8d24a1429f7fa74a99befaff61da488acf8aef02bac8c47fcd3fbd80228cfd04",
+   "bytes": 107789,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-31_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p32.jpg": {
+   "sha256": "41b8a2aab94086a2861df93a66dc29849b094c82ea134fb8dafbeef3f1653492",
+   "bytes": 107742,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-32_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p33.jpg": {
+   "sha256": "d12db63f7d9ced9ff7d56a1faa5795df8a3fe1c971e4681a21652e02a4991b07",
+   "bytes": 107929,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-33_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p34.jpg": {
+   "sha256": "c5a9def6615c8254d061a3860b1bc47d67a6b8c2f2a30be07384df3665718dd5",
+   "bytes": 107882,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-34_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p35.jpg": {
+   "sha256": "ce334088c4d69619909c84710ff5cb4c337d4080e06a98e151f5c4e7202923b3",
+   "bytes": 107819,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-35_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p36.jpg": {
+   "sha256": "5ff764baf1694487b8d8d4df7466048d5d5fb2a90082f4ba984e2aa200231030",
+   "bytes": 129039,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-36_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p37.jpg": {
+   "sha256": "49dba4f378492c1112b9269324f8fa3e0c790a87fa0f6238c71a2e21e07d9cf5",
+   "bytes": 139862,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-37_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p38.jpg": {
+   "sha256": "ead0569ec4ec8ccc8ae1101a105a29997f310d2f37c22a0837c4d0b693f0099e",
+   "bytes": 104330,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-38_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p39.jpg": {
+   "sha256": "b58d6bf99fafc88fc76133b12a5b49cd4702647c8fc3ef46f5e522e42206893e",
+   "bytes": 120630,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-39_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p40.jpg": {
+   "sha256": "dc6db621679b5736660d75d6767246a7f4b7934995f0eaf52421675c2d8015d2",
+   "bytes": 106633,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-40_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p41.jpg": {
+   "sha256": "11937da8b03ab1d3abcc2dd1dcc37bcb414f8a0a194828bb1dabd2955735ae13",
+   "bytes": 106499,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-41_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p42.jpg": {
+   "sha256": "70221452ba478cf4c77c4eabe5d8ef9fff0e4ddcbd9f679f8890efb27f6a09db",
+   "bytes": 106388,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-42_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p43.jpg": {
+   "sha256": "ff29d2230043d0e871d4bfceb3d23290655a8ca796d1cc0ffc03286c11768ba6",
+   "bytes": 106737,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-43_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p44.jpg": {
+   "sha256": "e87f80b8197017849086b53287e8099c51a6400f799658f2f317434efd439e6e",
+   "bytes": 106440,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-44_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p45.jpg": {
+   "sha256": "a16befd843e9f55becfe98d339f9c5b31a99228e8d1bf3be29a6b70d8ee3fdef",
+   "bytes": 106793,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-45_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p46.jpg": {
+   "sha256": "5247e227a3a881834ca31301a3c9abec913baf03dfa74dd8f6fabb44652ef1f8",
+   "bytes": 106667,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-46_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p47.jpg": {
+   "sha256": "283927578697e86151be0e2c794ae41a9ef86e4638c082ee5f4b2b6b88d631f6",
+   "bytes": 106449,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-47_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p48.jpg": {
+   "sha256": "889206a6f08d751a1f4391ea892e4c6a4b7c9b2ff8fb7dbb372ae323ad28a699",
+   "bytes": 106820,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-48_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p49.jpg": {
+   "sha256": "a6d035c8a4bb8a426cc61b854f3cfcb4c2e989fd034212e13d8815903112f5ec",
+   "bytes": 106746,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-49_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p50.jpg": {
+   "sha256": "0d6e0dce78cb0d0c14e48bfa9419ea60294bdd01dad1472c77664b656553d031",
+   "bytes": 105797,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-50_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p51.jpg": {
+   "sha256": "888a6f3035317e3c216b5ca9fcfcc05434eb5551d0423ded2a3a280573175e49",
+   "bytes": 106364,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-51_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p52.jpg": {
+   "sha256": "bf3714151e4bad36226aed0190907f5c89b65b6e59e644519312adfbc5d62180",
+   "bytes": 106211,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-52_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p53.jpg": {
+   "sha256": "41cbf1d5421b0b5d73ed24a24a5cc3eef235b6f282c51729e604941f24a45379",
+   "bytes": 106527,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-53_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p54.jpg": {
+   "sha256": "ec2e18a9449559d4b25a88c6b98d2313af87aa6f5d9c0d62adccee8613319d92",
+   "bytes": 106717,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-54_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p55.jpg": {
+   "sha256": "b1b10cedb61520c88d82054b9cfaf4a1ed1baf0a69b20d8f584aebd78dc5521b",
+   "bytes": 106334,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-55_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p56.jpg": {
+   "sha256": "939ef822f592579c308f7e40eebe46940a536c69e9c7d1ebda1bf72da84f2e8a",
+   "bytes": 106705,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-56_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p57.jpg": {
+   "sha256": "159aed57cfdd68b2b87095369c6c8b4589e4c6c37c47a9a025c18a63e1a13811",
+   "bytes": 106770,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-57_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p58.jpg": {
+   "sha256": "48e54c54244b7e3054be59c0ee81d7e6b3af419748e8ee4f94d8eb70174ccaf0",
+   "bytes": 106808,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-58_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p59.jpg": {
+   "sha256": "09fae196c8bbc9efaf79df7b1d9596c09dd69dd1895a520a10d61a011d7b0be2",
+   "bytes": 105903,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-59_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p60.jpg": {
+   "sha256": "f25bf797522523b650358fbebe38e316ea68091830fd9526ba27d2009719bb34",
+   "bytes": 106400,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-60_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p61.jpg": {
+   "sha256": "940a65bd6712fbe198aea9fc78761151fc9192bfcf784e01e1785d0841118c4b",
+   "bytes": 106128,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-61_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p62.jpg": {
+   "sha256": "3e60edf7064acdb83f8f520bdc3ba4af6980f5fb52bd8f1a4bd67b6c8e7724b7",
+   "bytes": 106708,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-62_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p63.jpg": {
+   "sha256": "c1a3cbf5e724af5d9767ecf7dea8676b49ebef79ac4741d94afc6abdd91b1c93",
+   "bytes": 106953,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-63_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p64.jpg": {
+   "sha256": "2d2b8b283caad063265da60bce2023a1ff59d3558329e0e197aa89d47a8e5559",
+   "bytes": 106770,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-64_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p65.jpg": {
+   "sha256": "ee32fcd14221f6b429c3185467798d8bd14e35cfcef28645312bdec244ada63d",
+   "bytes": 106992,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-65_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p66.jpg": {
+   "sha256": "de48e1c879234573b6d789f2a59241d35aa6ee0983cce2c44ab8310f49e6c2b6",
+   "bytes": 107350,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-66_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p67.jpg": {
+   "sha256": "00fa9379f493c43b8488451ef0444a628a923e31a255a513fb8e8f9e0e026553",
+   "bytes": 106805,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-67_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p68.jpg": {
+   "sha256": "2895860e3f3245082e983f80e1ada63f0c60c72c24bf1e648b78a6fbb7f9b3a1",
+   "bytes": 106232,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-68_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p69.jpg": {
+   "sha256": "654e49864c9e61b221bbce6249085db6d0ff446c7862d1dedee164ca9717f330",
+   "bytes": 106238,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-69_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p70.jpg": {
+   "sha256": "626e4497968f88407ba76d97a5610b7ee4ad992600a175266b4b7d98109794b2",
+   "bytes": 106904,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-70_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p71.jpg": {
+   "sha256": "611bc308cbfbf583fa7f764c6a5bee36f6b7b98bb3a6051cfd29979af0344ca6",
+   "bytes": 107173,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-71_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p72.jpg": {
+   "sha256": "36905154fa5a290cb72dc8af4045281e32dc06fb5858fc2bd8f7503a064f5493",
+   "bytes": 107187,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-72_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p73.jpg": {
+   "sha256": "2c06ab39875d62bf4ff8ce8095a29422916d0f9a63befffe19a8b18b3757a5fb",
+   "bytes": 107045,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-73_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p74.jpg": {
+   "sha256": "09d850f0fb247cbb2e7b6f927f775dc3e9ad0289fc980af5db9153d78c5ee542",
+   "bytes": 107602,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-74_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p75.jpg": {
+   "sha256": "a2208ea9ffc87fd851ab55807e21ea96194c819306fb984936873b60932cdb97",
+   "bytes": 106861,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-75_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p76.jpg": {
+   "sha256": "38c8895fe9f243b0cf4291e385aab46dbdb87881606fbc754b11d7f792594dfa",
+   "bytes": 106118,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-76_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p77.jpg": {
+   "sha256": "24f1d9ddc3c3555eccf0756e9ca4efd4b7cc76b63183f1851bd94a503b4c03dd",
+   "bytes": 106596,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-77_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p78.jpg": {
+   "sha256": "a61ea94fcaa7d2210755f4a5ddc172ab68f05e891e08a6a1ad6e363218ecddc7",
+   "bytes": 107132,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-78_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p79.jpg": {
+   "sha256": "90363c7c47581f02956c3834b679a3a044c932812018523c1748d3be969d381c",
+   "bytes": 106830,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-79_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p80.jpg": {
+   "sha256": "d9956698fc63c1769ddc32bfcbc25354a0240fd7ac124652ccd063ecd30eea3e",
+   "bytes": 106945,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-80_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p81.jpg": {
+   "sha256": "ddc82f91989ee68672618f791c57c136db235bf927329c4ccbcd9cdcf6b04fb3",
+   "bytes": 106950,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-81_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p82.jpg": {
+   "sha256": "a853319fb525e88edb3e9bb5afb0d50ca979708a43770137475e5b2f9cb0d739",
+   "bytes": 106753,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-82_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p83.jpg": {
+   "sha256": "0d7f78419f52c3c79acf0b38f3bfb99211ebdcacd99b1c755f699faffd7e5240",
+   "bytes": 107559,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-83_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p84.jpg": {
+   "sha256": "05e87b7ef92d39705260cd7beaf2873e3f8a14eb11e75381670979c5074613e0",
+   "bytes": 107523,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-84_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p85.jpg": {
+   "sha256": "68f38c53fb0472f59116d9bb2b0d82a5e4b4badb9d774ccfb1ea78a1e365615c",
+   "bytes": 107363,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-85_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p86.jpg": {
+   "sha256": "2813e51ca53ae2129e13d912ea27b587723f2d8840688437afe643c986816848",
+   "bytes": 107185,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-86_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p87.jpg": {
+   "sha256": "b1350e04c4138d79388308723353f309d83949d1a81b627cd1aa65667fc5df98",
+   "bytes": 107457,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-87_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p88.jpg": {
+   "sha256": "8664900ae438f53df19da202a65382f9d0c3a8accf7bf82b9144b509a8e82516",
+   "bytes": 107825,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-88_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p89.jpg": {
+   "sha256": "22404ecb91d8b22bf6497325769add8427402fdc485ceb53172c9edb1e9501a1",
+   "bytes": 107359,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-89_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p90.jpg": {
+   "sha256": "f71759baa39cec9de02a88953c988be4e3b3188a5398604c44a33f9f9804f651",
+   "bytes": 107213,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-90_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p91.jpg": {
+   "sha256": "c6097ba658450085a87bc2c1d2d38adc9a2958b33e5d095d034621a3c06b681f",
+   "bytes": 107636,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-91_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p92.jpg": {
+   "sha256": "254d11c8d557218d40e37091f48a22de3e5f54c85067a24962f852cecd4a9ca1",
+   "bytes": 107393,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-92_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p93.jpg": {
+   "sha256": "b79002a5c872f72457320f97f45a257aade43f0168eaffc99bc2fe9596aec27b",
+   "bytes": 107803,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-93_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p94.jpg": {
+   "sha256": "17ed7c6822ac3bb04147788265aec3640aa35d277db0a349f045db0f8762f42f",
+   "bytes": 107396,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-94_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res26-2022/p95.jpg": {
+   "sha256": "1736fe8ac6e1be789f87af7f50046747254f41f2962019eaaea6507703282e08",
+   "bytes": 49753,
+   "url": "https://www.argentina.gob.ar/normativa/276625_res26mec-Anexo-95_jpg/archivo",
+   "fuente": "Anexo II Res. SC 26/2022 (B.O. 4/10/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a1.jpg": {
+   "sha256": "d31333fa2f3437e451aa5227828cbe25f096eb74bebbf50364a81189d13f9fc5",
+   "bytes": 85196,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-1_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a2.jpg": {
+   "sha256": "019894b7e397bf2d6dfeec6ae8a352afce409ed948f8ed1ded876b74caaae338",
+   "bytes": 94701,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-2_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a3.jpg": {
+   "sha256": "28d53621b8f55d4e93205ba8347e84acb635cd1cf638639d66a380075f9c547e",
+   "bytes": 96819,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-3_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a4.jpg": {
+   "sha256": "d130d093ece0f880bab412e03c96dc3835797efa629c1736a47462a58d8f0cbb",
+   "bytes": 115329,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-4_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a5.jpg": {
+   "sha256": "8476bda4a32f7ee67645e305e2a9178f7e43b71a6d9a932e4d7cbafeeffff9f0",
+   "bytes": 123753,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-5_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a6.jpg": {
+   "sha256": "aaf4dfede3a06a9b202ab6cf878af89880e1b06e64832eb9a95395654e288d4f",
+   "bytes": 97859,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-6_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a7.jpg": {
+   "sha256": "7ac631388f43f1d080a7bc70e57bbd7feecb1cba4b5a2e5274eb06e4993d76a0",
+   "bytes": 105049,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-7_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a8.jpg": {
+   "sha256": "9bd773ed133d46e64463c19d85217857b1577c0438cab6cf06a1435afe8e3160",
+   "bytes": 106328,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-8_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a9.jpg": {
+   "sha256": "f6f6bbd60bcd85f314be7450c13e4b0517e4d64721cdfedf538c5737a85a1db0",
+   "bytes": 105520,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-9_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a10.jpg": {
+   "sha256": "c03ef7398a1d61d6a3d5d69c0b821f9d5664a47a255e4167a2f0881bb62a14a4",
+   "bytes": 106421,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-10_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a11.jpg": {
+   "sha256": "cb614cd0f18f75602a3d0bb211786482e7e9c688c68b39a11e8e5ae5c826e9f7",
+   "bytes": 99530,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-11_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a12.jpg": {
+   "sha256": "98b590bf253ef300e7ef779d7cfb24ea3663a493d8933aa78dbacabdcdbdf2ea",
+   "bytes": 96375,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-12_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a13.jpg": {
+   "sha256": "4836d012d4034c5bbdc8de993e062c9d09ba2d4d3efec51c4535aa48d9f585a0",
+   "bytes": 100366,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-13_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a14.jpg": {
+   "sha256": "2d486db63ffad4e08b1d5cc6c2456d7ace1903408162ec12dde07e29373b0ec7",
+   "bytes": 98017,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-14_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a15.jpg": {
+   "sha256": "a6db30588e4c227faa7c13af1fb4f4767aedce9be9c02b81d8cc52d67d1e4119",
+   "bytes": 96733,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-15_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a16.jpg": {
+   "sha256": "725b3228ed5750ec20b2768a5429c7e9120e0e55a26ec9a5668670a1eaf20308",
+   "bytes": 96984,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-16_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a17.jpg": {
+   "sha256": "a3405c1da2c25c619a0435f1e606010ba15fff221b70addfbc5f72c0b76dec6a",
+   "bytes": 97135,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-17_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a18.jpg": {
+   "sha256": "9a2f2a9e357c9f4084d1a21e89e9fed7a494eeb817f2cbc6da308337a15b30ee",
+   "bytes": 96899,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-18_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a19.jpg": {
+   "sha256": "bc359ce43ec6c16d799395820e3910cb8413d6f9710a27038cbe671bc8411066",
+   "bytes": 103492,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-19_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a20.jpg": {
+   "sha256": "dc926a3f263fe6ec23649379c5714e43c308b21895657919fcc00b86e89fbe4b",
+   "bytes": 107358,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-20_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a21.jpg": {
+   "sha256": "df01f318b9427e15541d3e9ade265316ca603929d0c9f8bb4d7010669952d070",
+   "bytes": 96820,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-21_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a22.jpg": {
+   "sha256": "b3fb02c0cbd1c86aaa15a60cb81936a192fba00af71b6e88385556f4a3bb1101",
+   "bytes": 96623,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-22_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a23.jpg": {
+   "sha256": "05207b1cc8a062b0be5fdeb6f8ae510d15c830c4c2ee884638def50c9c97b3af",
+   "bytes": 96311,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-23_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a24.jpg": {
+   "sha256": "12984120ef02db43261ed5816e9268833cc8b0436c9fbbe29d004aa8d5ba2dbc",
+   "bytes": 96103,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-24_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a25.jpg": {
+   "sha256": "bdf35c34c99af54bb16eb7fd6be7a134fc60bac8cb1d0801e08c1795559ad0b3",
+   "bytes": 97235,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-25_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a26.jpg": {
+   "sha256": "22285b3a8d6904be6325392f403b317bff9222c45add13ed59d6caffe062c60f",
+   "bytes": 97417,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-26_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a27.jpg": {
+   "sha256": "c4f368b8b0ffec944795c3069ff7bf8c3a3f495bf7fc811407df414c2207c61a",
+   "bytes": 97023,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-27_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a28.jpg": {
+   "sha256": "21f03ee5bc135a40804fc49450978feb40ae58e46bf67a95d5fa8add125750ac",
+   "bytes": 97082,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-28_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a29.jpg": {
+   "sha256": "42aaca3f6923f1f6fcb163051ff48b1be09abea6d65d8c2fbeb3e6850a424521",
+   "bytes": 102561,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-29_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a30.jpg": {
+   "sha256": "762b581b5aa2d438ce5049b9faf7fb706e65ae586f6c3ccec65ff8d6a4445acd",
+   "bytes": 101519,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-30_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a31.jpg": {
+   "sha256": "94e52432f5177c258954199b43f23b91087e80f0ee1a804f68a596a56d340660",
+   "bytes": 109237,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-31_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a32.jpg": {
+   "sha256": "f105dfa3ec5634a03a9563fdd2fda45c8691149b9a36cc4b403bc3f9a8c7e97a",
+   "bytes": 110065,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-32_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a33.jpg": {
+   "sha256": "bb1a55db5a56c4a7e73e8f05755d561e00d959d570bc9afc864af918bebf93a8",
+   "bytes": 96103,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-33_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a34.jpg": {
+   "sha256": "ca87d8f3d014a2b7f63c865610f19b41225fc4eca67a8b8cb8e77044d5191d4f",
+   "bytes": 104593,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-34_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a35.jpg": {
+   "sha256": "d675581c0ec3aac168c850d950892083ef242ac727a26882359f06b8a95c765f",
+   "bytes": 110169,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-35_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a36.jpg": {
+   "sha256": "c382b9bc0f62c72d6f5b9c3733d6daae4b3376ea01ee218f5f21a6bf2e117f15",
+   "bytes": 102879,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-36_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a37.jpg": {
+   "sha256": "2c0e732c7fc47c5949f35e061b86860f880e0c8517dd71fc7d523121c8cc80c6",
+   "bytes": 118974,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-37_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a38.jpg": {
+   "sha256": "8f8cc4c8fad40ce165805d0f25f1b4f77c4ae4a79214cf662001f5fce553f038",
+   "bytes": 114954,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-38_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a39.jpg": {
+   "sha256": "2f17475432d712ddeb33121ca978cf584904420031c64beaf0a555e4778c16e0",
+   "bytes": 112289,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-39_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a40.jpg": {
+   "sha256": "37a3c53c7d395a3b944ba9694b1bfa8752593626194f3769819cc4e57a5ae54a",
+   "bytes": 109976,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-40_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a41.jpg": {
+   "sha256": "08cff2659247aa63eee067b036a6a3e9ea28ee459ddf6655219ad62e1fb18d8e",
+   "bytes": 106428,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-41_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a42.jpg": {
+   "sha256": "ced8db21dbe2485f21c4ecb2990388c7558b70b44390de9b8b15ec0466e5030b",
+   "bytes": 96212,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-42_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a43.jpg": {
+   "sha256": "c3a6a5a8c00e35c7d892579da2c0b3ce83129d7c7c20f13c58905e1aae44f5a3",
+   "bytes": 118746,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-43_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a44.jpg": {
+   "sha256": "a03a99ea238bd31a25c5740e271d556ed4a378a3e11231c4bd45a7c75cb86037",
+   "bytes": 99661,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-44_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a45.jpg": {
+   "sha256": "78b2fe2a98849cc554ce8e30d023509e30118f9896480c0bc842e0367b345ba4",
+   "bytes": 99700,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-45_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a46.jpg": {
+   "sha256": "232d91106fe476151027673fb20310cbddaeea9956058f628062f387fe2e52be",
+   "bytes": 132714,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-46_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a47.jpg": {
+   "sha256": "6dfc6a441eb1075766e830c1b338f510008a92be01e2b1a573c7cb7914ef091e",
+   "bytes": 102808,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-47_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a48.jpg": {
+   "sha256": "e00ac8b46fbe592b12534ccfb8458104ee82e0d1d5346d8dabe60603bc6c154e",
+   "bytes": 97154,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-48_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a49.jpg": {
+   "sha256": "ea8070f4120f6d22d1ffb3d39367545369eb165c3a07d0fe0a692a67eacde02f",
+   "bytes": 106685,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-49_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a50.jpg": {
+   "sha256": "8f808dbfdf62a35c4f7b65d67f6dfa8fb5799455e59ea7bd229837ea5503e860",
+   "bytes": 106237,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-50_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a51.jpg": {
+   "sha256": "fcb2d2baa510d642c5ff90b16b6fe5ccd15b47dda5c7184197bb1b07ba54064b",
+   "bytes": 99699,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-51_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  },
+  "datos/anexo2-lna-res1-2022-agosto/a52.jpg": {
+   "sha256": "3e33f0f20e4c470508392e42f73c68c7b56acdbe59af6b9dcc143881a7423aa2",
+   "bytes": 38641,
+   "url": "https://www.argentina.gob.ar/normativa/370338_res1mec-AnexoI-52_jpg/archivo",
+   "fuente": "Anexo II Res. SC 1/2022 (B.O. 25/8/2022)"
+  }
+ },
+ "nota_edicion": "Al 2026-09-04 el archivo imports_2026_M.zip del INDEC ya no coincide con esta lista: pasó de 187.653 a 219.565 registros porque el organismo cargó los meses posteriores a junio, y además revisó el peso de 14 celdas de junio de 2026. Los programas fijan la ventana del trabajo en 2026-06 (VENTANA_HASTA), así que descargar la edición nueva reproduce igual el panel (48.688 celdas, 314.503 registros de bienes de capital) y todos los resultados publicados, con una sola excepción: la razón de cantidades G2/G1 del tramo III pasa de 79,2 a 78,8. Para reproducir el trabajo al dígito hace falta la edición de esta lista."
+}

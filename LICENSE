@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 Ramiro Soler
+
+Se concede permiso, libre de cargo, a cualquier persona que obtenga una copia de
+este software y de los archivos de documentación asociados (el "Software"), para
+utilizar el Software sin restricción, incluyendo sin limitación los derechos de
+usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender
+copias del Software, y permitir a las personas a las que se les proporcione el
+Software hacer lo mismo, con sujeción a las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas las
+copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+IMPLÍCITA, INCLUYENDO PERO NO LIMITADA A GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD
+PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O
+TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑO U OTRA
+RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O CUALQUIER OTRO
+MOTIVO, DERIVADAS DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O SU USO U OTRO
+TIPO DE ACCIONES EN EL SOFTWARE.
+
+---
+
+ALCANCE DE ESTA LICENCIA
+
+La licencia MIT cubre el CÓDIGO de este repositorio: los programas que descargan
+las fuentes, construyen el panel, corren los análisis y verifican los resultados.
+
+NO cubre las fuentes primarias, que no son de quien firma este trabajo y no se
+redistribuyen acá: las bases de comercio exterior del INDEC, el Arancel Externo
+Común y los anexos de las Resoluciones SC 1/2022 y 26/2022 son documentos
+públicos de organismos del Estado argentino, y los programas los descargan de sus
+sitios oficiales. Cada uno conserva sus propias condiciones de uso.
+
+Tampoco cubre el texto de la tesis, que no forma parte de este repositorio.
