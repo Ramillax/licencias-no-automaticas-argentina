@@ -58,9 +58,14 @@ también verifican las cifras que ese trabajo publica.
 
 ## Requisitos
 
-No hay nada que instalar. El único requisito es **Python 3.8 o posterior**, que viene de fábrica
-en Linux y macOS y se baja de python.org en Windows. Los programas usan solamente la biblioteca
-estándar: no hay pandas, ni numpy, ni paquetes de terceros de ningún tipo.
+Para reproducir los resultados, **Python 3.8 o posterior y nada más**. Viene de fábrica en Linux
+y macOS y se baja de python.org en Windows. Los programas usan solamente la biblioteca estándar:
+no hay pandas, ni numpy, ni paquetes de terceros de ningún tipo.
+
+**Rehacer el OCR de los anexos es lo único que pide software del sistema: `tesseract`**, o Docker,
+que sirve igual. Queda fuera de la cadena y no hace falta para reproducir ninguna cifra, porque la
+transcripción viaja hecha y verificada por SHA-256; se documenta en
+[Rehacer el OCR](#rehacer-el-ocr).
 
 ## Correrlo
 
@@ -82,7 +87,7 @@ python3 scripts/reproducir.py --listar      # muestra las ocho etapas
 
 ## Qué tiene que dar
 
-La última etapa contrasta treinta cifras del trabajo contra lo que acaba de
+La última etapa contrasta treinta y siete cifras del trabajo contra lo que acaba de
 calcular y termina así:
 
 ```
