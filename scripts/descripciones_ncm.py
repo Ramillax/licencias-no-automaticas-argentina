@@ -15,8 +15,8 @@ legible, y de esa lectura dependen dos piezas del capítulo 7:
 Un error acá no rompe nada de forma visible: sesga en silencio una dimensión del
 capítulo 7. Ya pasó una vez, y está explicado en la segunda pasada, más abajo.
 
-Entrada:  ~/tesis/datos/ncm_aec2017.pdf   (o el .txt ya extraído, si está)
-Salida :  ~/tesis/datos/ncm_descripciones.tsv   (código, AEC%, marca, descripción)
+Entrada:  datos/ncm_aec2017.pdf   (o el .txt ya extraído, si está)
+Salida :  datos/ncm_descripciones.tsv   (código, AEC%, marca, descripción)
 
 Uso:  python3 descripciones_ncm.py [codigo ...]
 

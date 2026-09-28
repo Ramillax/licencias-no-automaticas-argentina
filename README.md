@@ -1,5 +1,8 @@
 # Licencias no automáticas de importación en la Argentina, a nivel de posición arancelaria
 
+[![regimen](https://github.com/Ramillax/licencias-no-automaticas-argentina/actions/workflows/regimen.yml/badge.svg)](https://github.com/Ramillax/licencias-no-automaticas-argentina/actions/workflows/regimen.yml)
+[![reproduccion](https://github.com/Ramillax/licencias-no-automaticas-argentina/actions/workflows/reproduccion.yml/badge.svg)](https://github.com/Ramillax/licencias-no-automaticas-argentina/actions/workflows/reproduccion.yml)
+
 **Este repositorio reconstruye qué posiciones arancelarias de la Nomenclatura Común del
 MERCOSUR estuvieron sujetas a licencias no automáticas de importación entre 2021 y 2026, con
 fecha, y construye el panel de importaciones del INDEC que permite medir qué pasó con ellas.**
@@ -33,13 +36,34 @@ Dos archivos en `datos/regimen/` se pueden abrir directamente:
 | `bienes-de-capital-trayectorias.csv` | Las **1.211 posiciones de bienes de capital** de los capítulos 84 a 90, etiquetadas según su trayectoria: bajo licencia desde agosto de 2022, incorporadas en octubre, o nunca alcanzadas |
 
 Los dos son producto de los programas, no archivos sueltos: `construir_universo.py`
-los regenera desde los anexos transcriptos y avisa si difieren de los publicados.
+los regenera desde los anexos transcriptos e informa, archivo por archivo, si quedaron
+idénticos a los publicados o cambiaron. En cada cambio al repositorio lo comprueba
+además la integración continua (ver [Comprobación automática](#comprobación-automática)).
+
+**Columnas de `regimen-lna-argentina.csv`**
+
+| Columna | Contenido |
+|---|---|
+| `ncm` | Posición NCM de 8 dígitos, con puntos (`8429.51.99`) |
+| `capitulo` | Los dos primeros dígitos |
+| `marca_aec` | `BK` (bien de capital), `BIT` (informática y telecomunicaciones) o vacío, según el Arancel Externo Común |
+| `res_1_2022_agosto` · `res_26_2022_octubre` | `si` si la posición figura en el Anexo II de cada resolución |
+| `entrada` · `salida` | Fechas de entrada y salida del régimen, en ISO 8601. La salida es la abrogación (2023-12-27), salvo para las 8 posiciones de agosto que la resolución de octubre no repitió, que salen el 2022-10-04 |
+
+**Columnas de `bienes-de-capital-trayectorias.csv`**
+
+| Columna | Contenido |
+|---|---|
+| `ncm` · `capitulo` | Como arriba |
+| `trayectoria` | `G1` bajo licencia desde agosto de 2022 · `G2` incorporada en octubre · `G3` nunca alcanzada |
+| `entrada` · `salida` | Fechas del régimen para esa posición; vacías en `G3` |
+| `descripcion_trayectoria` | La trayectoria en palabras |
 
 ### Los módulos importables
 
 | Módulo | Qué resuelve |
 |---|---|
-| `scripts/indec.py` | Lee el microdato de comercio exterior del INDEC: codificación latin-1, decimales con coma y la ventana temporal que evita que el resultado dependa del día de la descarga. `filas_importacion()` genera cada operación |
+| `scripts/indec.py` | Lee el microdato de comercio exterior del INDEC: codificación latin-1, decimales con coma y la ventana temporal que evita que el resultado dependa del día de la descarga. Es el único lector de la cadena, y el formato numérico es estricto: un monto con una forma distinta de la relevada en los archivos detiene la cadena en vez de convertirse en cero. `filas_importacion()` genera cada operación |
 | `scripts/indices.py` | El índice de Törnqvist, con y sin informe de cobertura. Sin dependencias ni efectos |
 
 ## Para qué sirve más allá de esta tesis
@@ -87,8 +111,8 @@ python3 scripts/reproducir.py --listar      # muestra las ocho etapas
 
 ## Qué tiene que dar
 
-La última etapa contrasta treinta y siete cifras del trabajo contra lo que acaba de
-calcular y termina así:
+La última etapa contrasta cuarenta y tres cifras del trabajo contra lo que acaba de
+calcular, de los capítulos 3 al 7, y termina así:
 
 ```
 Todo lo verificado coincide con lo publicado en el trabajo.
@@ -100,6 +124,14 @@ qué dice la tesis y qué dio el recálculo.
 **La columna «en la tesis» de ese cuadro son constantes escritas a mano en
 `scripts/verificar.py`, copiadas del texto publicado.** Lo que se contrasta es el
 texto contra el dato, no el dato contra sí mismo.
+
+Además del valor, se comprueba la **forma** del resultado principal del capítulo 7
+(sólo la diferenciación del producto alcanza su máximo en el último tramo), que
+podría romperse sin que ninguna cifra se moviera mucho.
+
+Un quinto bloque cierra el círculo del otro lado: busca cada una de esas cifras,
+escrita tal cual, en el capítulo que la publica. Necesita el texto de la tesis, que
+no forma parte de este repositorio, así que acá se saltea con un aviso.
 
 ## De dónde salen los datos
 
@@ -186,6 +218,15 @@ No hacen falta para reproducir los resultados: existen para auditarlos.
 | `probar_indices.py` | Que el índice de Törnqvist esté bien implementado, verificando siete propiedades que la fórmula debe cumplir por construcción: identidad, proporcionalidad, reversión temporal y otras. Corre sobre los datos reales y usa la misma función que produce los resultados publicados |
 | `ocr_anexo.py` | Rehace la transcripción desde las imágenes. Lo único que necesita instalado |
 
+## Comprobación automática
+
+Dos flujos de GitHub Actions corren los mismos programas en una máquina limpia:
+
+| Flujo | Cuándo | Qué comprueba |
+|---|---|---|
+| `regimen` | En cada cambio | Que todo compile con Python 3.8 y 3.12, que el lector del INDEC rechace formatos inesperados y que los dos CSV del régimen se regeneren **byte a byte** a partir de los insumos del repositorio |
+| `reproduccion` | A mano y una vez por mes | La cadena entera desde las fuentes oficiales hasta el veredicto de `verificar.py`, más las propiedades del índice. Si un organismo cambia o retira un archivo, se ve acá |
+
 ## Dónde quedan los resultados
 
 En `datos/`. Los principales son `panel_bk_ncm_mes.csv` (el panel, una fila por
@@ -195,7 +236,9 @@ los números índice) y `robustez_grupos.json` y `analisis_heterogeneidad.json`
 
 ## Cómo citar
 
-Si usás la reconstrucción del régimen o el panel en un trabajo propio, se agradece la cita:
+Si usás la reconstrucción del régimen o el panel en un trabajo propio, se agradece la cita.
+El repositorio trae `CITATION.cff`, así que el botón **Cite this repository** de GitHub la
+da en APA y en BibTeX:
 
 > Soler, R. (2026). *Licencias no automáticas de importación en la Argentina a nivel de posición
 > arancelaria, 2021–2026: reconstrucción y panel de importaciones* [Software y datos].

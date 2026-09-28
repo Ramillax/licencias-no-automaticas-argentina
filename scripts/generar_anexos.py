@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera ~/tesis/borradores/anexos.md a partir de los archivos de resultados, de
+Genera borradores/anexos.md a partir de los archivos de resultados, de
 modo que los cuadros del anexo no se transcriban a mano en ningún momento.
 
 Uso:  python3 generar_anexos.py
@@ -61,8 +61,8 @@ for a in sorted(por_anio):
 bk_oct = [r["cob_bk_oct"] for r in cobertura]
 out += ["",
         f"En los {len(cobertura)} meses del período la cobertura del listado de octubre de "
-        f"2022 sobre los bienes de capital no baja de **{n(min(bk_oct), 1)} %** ni supera "
-        f"**{n(max(bk_oct), 1)} %**. El régimen de octubre alcanzó a la práctica totalidad "
+        f"2022 sobre los bienes de capital no baja de {n(min(bk_oct), 1)} % ni supera "
+        f"{n(max(bk_oct), 1)} %. El régimen de octubre alcanzó a la práctica totalidad "
         f"del valor importado del universo, en todos los meses del período.", ""]
 
 # --------------------------------------------------------------- Anexo B
@@ -122,9 +122,9 @@ for a, regs, fob in [(2021, 363916, 59291.1), (2022, 359652, 76354.6), (2023, 33
                + f" {n(fob,1)} | 0,00 |")
 out += ["",
         f"La coincidencia es exacta en las tres magnitudes y en los seis años. "
-        f"Sobre los **{cob['filas_indec']:,} registros** leídos, "
-        f"**{cob['filas_bk']:,}** corresponden al universo de bienes de capital; "
-        f"**ninguno** tiene valor FOB positivo con peso neto nulo, y ninguno presenta "
+        f"Sobre los {cob['filas_indec']:,} registros leídos, "
+        f"{cob['filas_bk']:,} corresponden al universo de bienes de capital; "
+        f"ninguno tiene valor FOB positivo con peso neto nulo, y ninguno presenta "
         f"marcas de confidencialidad estadística.".replace(",", " "), ""]
 
 out += ["### D.2 Deriva de encadenamiento y elección de la base fija", "",
@@ -174,26 +174,31 @@ out += ["", "### D.5 Transcripción de los anexos normativos", "",
         "Anexo II según la Resolución 26/2022 y 52 para el que estableció la Resolución "
         "1/2022. Se transcribieron mediante reconocimiento óptico de caracteres con tres "
         "controles.", "",
-        "1. **Segmentación por columna única de texto de tamaño variable.** Con segmentación "
+        "1. Segmentación por columna única de texto de tamaño variable. Con segmentación "
         "por bloque uniforme los bordes de la grilla se leen como dígitos y la salida es "
         "inservible: la posición `8472.90.10` se transcribe como `94720040`.",
-        "2. **Una única coincidencia por línea.** La columna de alcance contiene texto libre "
+        "2. Una única coincidencia por línea. La columna de alcance contiene texto libre "
         "con números —«superior a 15.000 frigorías/h»—, de modo que tomar solo la primera "
         "coincidencia de la línea evita arrastrarlos.",
-        "3. **Validación contra el nomenclador.** Cada código se verificó contra las 10.226 "
+        "3. Validación contra el nomenclador. Cada código se verificó contra las 10.226 "
         "posiciones de ocho dígitos del Arancel Externo Común, y los inexistentes se "
         "revisaron uno por uno.", "",
-        "**Auditoría.** Las 51 páginas del anexo de octubre correspondientes a los capítulos "
+        "Auditoría. Las 51 páginas del anexo de octubre correspondientes a los capítulos "
         "84 a 90, que reúnen 2.261 posiciones, se transcribieron una segunda vez por un "
         "procedimiento de lectura distinto del reconocimiento óptico, y las dos listas se "
-        "compararon entre sí por programa (`scripts/auditar_ocr.py`). **Los dos "
-        "procedimientos coinciden en 2.260 de los 2.261 códigos**: el único caso discordante "
+        "compararon entre sí por programa (`scripts/auditar_ocr.py`). Los dos "
+        "procedimientos coinciden en 2.260 de los 2.261 códigos: el único caso discordante "
         "—un `8708.50.11` leído `8708.50.14`— produce un código inexistente en el "
         "nomenclador, de modo que el control 3 lo habría descartado igual. La discrepancia "
         "es del 0,04 % y es detectable.", "",
         "### D.6 Programas", "",
-        "Todos los cuadros del trabajo se generan desde los archivos originales del INDEC y "
-        "del Arancel Externo Común, sin pasos manuales.", "",
+        "Todos los cuadros del trabajo se generan programáticamente, en Python y desde los "
+        "archivos originales del INDEC y del Arancel Externo Común. Los programas, junto con "
+        "la reconstrucción del régimen en formato tabular, están publicados en "
+        "https://github.com/Ramillax/licencias-no-automaticas-argentina y se corren con una "
+        "sola orden: `python3 scripts/reproducir.py` descarga las fuentes de los organismos "
+        "que las editan, las verifica por su huella digital, rehace el panel y termina "
+        "contrastando contra este texto las cifras que produce.", "",
         "| Programa | Produce |", "|---|---|",
         "| `construir_panel.py` | El panel posición-mes, las series agregadas en tres "
         "frecuencias, los números índice en sus dos definiciones de celda y las series por "

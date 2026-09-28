@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Si usás la reconstrucción del régimen o el panel en un trabajo propio, citalo así."
+title: "Licencias no automáticas de importación en la Argentina a nivel de posición arancelaria, 2021–2026: reconstrucción y panel de importaciones"
+type: software
+authors:
+  - family-names: Soler
+    given-names: Ramiro
+repository-code: "https://github.com/Ramillax/licencias-no-automaticas-argentina"
+license: MIT
+version: "1.1.0"
+date-released: "2026-09-28"
+keywords:
+  - licencias no automáticas
+  - comercio exterior
+  - Argentina
+  - bienes de capital
+  - NCM
+  - INDEC
+  - índice de Törnqvist
+abstract: >-
+  Reconstrucción, a nivel de posición arancelaria NCM de ocho dígitos y con fecha,
+  del régimen argentino de licencias no automáticas de importación (Res. SC 1/2022,
+  26/2022 y su abrogación en diciembre de 2023), y panel de importaciones del INDEC
+  2021–2026 con los programas que lo reproducen desde las fuentes oficiales.

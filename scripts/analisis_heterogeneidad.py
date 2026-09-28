@@ -31,7 +31,7 @@ que captura la misma idea económica —qué tan comparables entre sí son las
 mercaderías de distinto origen dentro de una posición— y que además se mide en el
 período previo, antes del cambio de régimen.
 
-Salidas: ~/tesis/datos/analisis_heterogeneidad.json y cuadros por pantalla.
+Salidas: datos/analisis_heterogeneidad.json y cuadros por pantalla.
 """
 
 import csv
@@ -49,8 +49,7 @@ from indec import filas_importacion    # lector del microdato, ver indec.py
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos"
 
-# Ver construir_panel.py: el archivo del año en curso crece entre descargas.
-VENTANA_HASTA = "2026-06"
+# La ventana temporal la aplica filas_importacion(): ver VENTANA_HASTA en indec.py.
 PRE = ("2021", "2022")
 
 # El arancel y la descripción salen del nomenclador; la trayectoria regulatoria,

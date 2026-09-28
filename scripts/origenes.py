@@ -3,7 +3,7 @@
 Composición por país de origen de las importaciones de bienes de capital,
 2021-2026: participación en el valor, participación en el peso y valor unitario.
 
-Salida: ~/tesis/datos/origenes.json  y un cuadro por pantalla.
+Salida: datos/origenes.json  y un cuadro por pantalla.
 
 Uso:  python3 origenes.py
 """

@@ -1,0 +1,23 @@
+# La cadena entera, desde las fuentes oficiales hasta el veredicto de verificar.py.
+# Baja 59 MB de los organismos, así que no corre en cada cambio: a mano desde la
+# pestaña Actions, y una vez por mes para enterarse si una fuente cambió o se cayó.
+name: reproduccion
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 3 * *"
+
+jobs:
+  reproducir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: De las fuentes al veredicto
+        run: python scripts/reproducir.py
+      - name: Las propiedades del índice de Törnqvist, sobre el panel real
+        run: python scripts/probar_indices.py

@@ -3,7 +3,7 @@
 Construye el panel de bienes de capital importados, 2021-2026, a partir de los
 archivos masivos del INDEC (Comercio Exterior, importaciones mensuales).
 
-Salidas, en ~/tesis/datos/:
+Salidas, en datos/:
   panel_bk_ncm_mes.csv    NCM(8) x mes: fob, kg, orígenes, HHI, Asia, China, grupo
   series_agregadas.json   series mensuales agregadas y números índice
   series_por_grupo.json   lo mismo, desagregado por trayectoria regulatoria
@@ -17,25 +17,23 @@ Uso:  python3 construir_panel.py
 import csv
 import json
 import math
-import zipfile
 from collections import defaultdict
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from indices import tornqvist_con_cobertura as tornqvist   # ver indices.py
+# El lector del INDEC y la ventana temporal viven en indec.py y sólo ahí.
+from indec import ANIOS, VENTANA_HASTA, registros, num, NCM, PORG, KG, FOB, FLETE, SEGURO
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos"
-INDEC = DATOS / "indec"
 TRANS = DATOS / "lna-transcripcion"
 PAISES = DATOS / "referencia" / "paises_indec.csv"
 
-ANIOS = range(2021, 2027)
-# El INDEC republica el archivo del año en curso a medida que cierra meses nuevos:
-# el de 2026 pasó de 6 a más meses después de la descarga original. La ventana del
-# trabajo es explícita para que el panel no dependa de la fecha en que se bajó el dato.
-VENTANA_HASTA = "2026-06"
+# ANIOS y VENTANA_HASTA vienen de indec.py. El INDEC republica el archivo del año
+# en curso a medida que cierra meses nuevos: la ventana del trabajo es explícita
+# para que el panel no dependa de la fecha en que se bajó el dato.
 
 
 # --------------------------------------------------------------------------
@@ -91,15 +89,8 @@ def es_asia(porg):
 # 3. Lectura de los archivos del INDEC
 # --------------------------------------------------------------------------
 
-def num(s):
-    """Convierte '4500,000' a float. Devuelve None si no es numérico."""
-    s = s.strip()
-    if not s:
-        return None
-    try:
-        return float(s.replace(".", "").replace(",", ".")) if "," in s else float(s)
-    except ValueError:
-        return None
+# Montos: indec.num(), que rechaza cualquier formato distinto del relevado en
+# los archivos en vez de convertirlo en cero. Ver la trampa 2 en indec.py.
 
 
 # (ncm, periodo, porg) -> [fob, kg, flete, seguro]
@@ -112,37 +103,29 @@ filas_descartadas = 0
 filas_fuera_ventana = 0
 
 for anio in ANIOS:
-    z = zipfile.ZipFile(INDEC / f"imports_{anio}_M.zip")
-    nombre = next(n for n in z.namelist() if n.startswith("impom") and n.endswith(".csv"))
-    with z.open(nombre) as fh:
-        lector = csv.reader((l.decode("latin-1") for l in fh), delimiter=";")
-        next(lector)  # encabezado
-        for fila in lector:
-            if len(fila) < 6:
-                continue
-            filas_total += 1
-            periodo = f"{fila[0].strip()}-{int(fila[1]):02d}"
-            if periodo > VENTANA_HASTA:
-                filas_fuera_ventana += 1
-                continue
-            ncm = fila[2].strip()
-            if ncm not in UNIVERSO:
-                continue
-            filas_bk += 1
-            porg = fila[3].strip()
-            kg = num(fila[4])
-            fob = num(fila[5])
-            if fob is None or fob <= 0:
-                filas_descartadas += 1
-                continue
-            if kg is None or kg <= 0:
-                filas_fob_sin_kg += 1
-                kg = 0.0
-            c = micro[(ncm, periodo, porg)]
-            c[0] += fob
-            c[1] += kg
-            c[2] += num(fila[6]) or 0.0
-            c[3] += num(fila[7]) or 0.0
+    for periodo, fila in registros(anio):
+        filas_total += 1
+        if periodo > VENTANA_HASTA:
+            filas_fuera_ventana += 1
+            continue
+        ncm = fila[NCM].strip()
+        if ncm not in UNIVERSO:
+            continue
+        filas_bk += 1
+        porg = fila[PORG].strip()
+        kg = num(fila[KG])
+        fob = num(fila[FOB])
+        if fob <= 0:
+            filas_descartadas += 1
+            continue
+        if kg <= 0:
+            filas_fob_sin_kg += 1
+            kg = 0.0
+        c = micro[(ncm, periodo, porg)]
+        c[0] += fob
+        c[1] += kg
+        c[2] += num(fila[FLETE])
+        c[3] += num(fila[SEGURO])
 
 print(f"filas leídas           : {filas_total:,}")
 if filas_fuera_ventana:

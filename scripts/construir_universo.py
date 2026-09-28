@@ -248,6 +248,13 @@ def csv_trayectorias(bk8490, g1, g2, g3):
     return "\n".join(filas) + "\n"
 
 
+def estado(path, nuevo):
+    """Cómo queda un archivo al regenerarlo: nuevo, idéntico o cambiado."""
+    if not path.exists():
+        return "nuevo"
+    return "idéntico" if path.read_text(encoding="utf-8") == nuevo else "CAMBIÓ"
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--modo", choices=("completo", "tesis"), default="completo")
@@ -289,12 +296,12 @@ def main():
     ]
 
     print()
-    distintos = ausentes = 0
+    distintos = ausentes = cambiados_publicados = 0
     for path, contenido in salidas:
         nuevo = volcar(contenido)
         if args.escribir:
+            print(f"  {estado(path, nuevo):<10} {path.name}  ({len(contenido)})")
             path.write_text(nuevo)
-            print(f"  escrito    {path.name}  ({len(contenido)})")
             continue
         if not path.exists():
             print(f"  NO EXISTE  {path.name}")
@@ -308,8 +315,13 @@ def main():
 
     for path, contenido in csvs:
         if args.escribir:
+            # Estos dos viajan publicados: si la regeneración los cambia, el
+            # lector tiene que enterarse, no encontrarlos pisados en silencio.
+            e = estado(path, contenido)
+            if e == "CAMBIÓ":
+                cambiados_publicados += 1
+            print(f"  {e:<10} {path.name}  ({contenido.count(chr(10)) - 1} filas)")
             path.write_text(contenido, encoding="utf-8")
-            print(f"  escrito    {path.name}  ({contenido.count(chr(10)) - 1} filas)")
         elif not path.exists():
             print(f"  NO EXISTE  {path.name}")
             ausentes += 1
@@ -335,6 +347,9 @@ def main():
     # `completo` la diferencia es esperable (las 98 posiciones que la regla vieja
     # perdía) y no tiene que cortar la cadena.
     if args.escribir:
+        if cambiados_publicados:
+            print(f"\n  ⚠ {cambiados_publicados} de los CSV publicados en datos/regimen/ "
+                  f"cambiaron al regenerarlos: la reconstrucción ya no coincide con la publicada.")
         return 0
     if ausentes:
         return 1

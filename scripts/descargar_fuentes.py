@@ -30,6 +30,9 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from indec import VENTANA_HASTA    # la ventana se define una sola vez, en indec.py
+
 RAIZ = Path(__file__).resolve().parent.parent
 MANIFIESTO = RAIZ / "datos" / "FUENTES.json"
 INDEC = RAIZ / "datos" / "indec"
@@ -188,11 +191,11 @@ def main():
         print(f"{AMBAR}Están las {total} fuentes. {republicados} ya no son la edición que usó el "
               f"trabajo:{FIN}")
         print(f"{GRIS}  el INDEC reescribe el archivo del año en curso a medida que cierra meses.")
-        print("  La ventana temporal del panel (VENTANA_HASTA) descarta lo posterior a junio de")
-        print(f"  2026, así que la cadena reproduce igual. verificar.py dice qué cifra se mueve.{FIN}")
+        print(f"  La ventana temporal del panel (VENTANA_HASTA = {VENTANA_HASTA}, en indec.py) descarta")
+        print(f"  lo posterior, así que la cadena reproduce igual. verificar.py dice qué cifra se mueve.{FIN}")
         return 0
     print(f"{VERDE}Están las {total} fuentes primarias y todas coinciden con el manifiesto.{FIN}")
-    print(f"{GRIS}Siguiente paso:  python3 {Path('scripts/verificar.py')}{FIN}")
+    print(f"{GRIS}Para correr la cadena completa:  python3 {Path('scripts/reproducir.py')} --desde 2{FIN}")
     return 0
 
 

@@ -1,0 +1,32 @@
+# En cada cambio: el régimen publicado se vuelve a derivar, idéntico, de los
+# insumos que viajan en el repositorio. No baja nada de los organismos.
+name: regimen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  regimen:
+    strategy:
+      matrix:
+        include:
+          - python: "3.8"      # el mínimo que promete el README
+            os: ubuntu-22.04
+          - python: "3.12"
+            os: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Los programas compilan
+        run: python -m compileall -q scripts
+      - name: El lector del INDEC rechaza formatos inesperados
+        run: python scripts/indec.py
+      - name: El régimen se regenera desde los anexos transcriptos y el arancel
+        run: python scripts/construir_universo.py --escribir
+      - name: Y coincide byte a byte con los CSV publicados
+        run: git diff --exit-code -- datos/regimen/

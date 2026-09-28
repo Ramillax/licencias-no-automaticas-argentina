@@ -19,7 +19,7 @@ sostenida, y el tramo donde MÁS cae es aquel en el que los dos grupos enfrentan
 exactamente el mismo régimen. Ese es el argumento central del capítulo 6 y la
 razón por la que el trabajo no atribuye causalidad.
 
-Salida: ~/tesis/datos/robustez_grupos.json y un cuadro por pantalla.
+Salida: datos/robustez_grupos.json y un cuadro por pantalla.
 
 Uso:  python3 analisis_grupos.py
 """
@@ -38,8 +38,7 @@ from indec import filas_importacion    # lector del microdato, ver indec.py
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos"
 
-# Ver construir_panel.py: el archivo del año en curso crece entre descargas.
-VENTANA_HASTA = "2026-06"
+# La ventana temporal la aplica filas_importacion(): ver VENTANA_HASTA en indec.py.
 
 GRUPO = {}
 for g, f in (("G1", "bk_ruta_a_control"), ("G2", "bk_ruta_a_tratadas"),
