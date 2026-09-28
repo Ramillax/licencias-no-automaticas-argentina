@@ -30,7 +30,10 @@ LAS TRES TRAMPAS
 3. **El archivo del año en curso se reescribe** a medida que el organismo cierra
    meses. Sin una ventana temporal explícita, bajar los datos un mes después
    alarga el período en silencio y mueve todos los resultados. Por eso el tope
-   es la constante `VENTANA_HASTA`, definida acá y sólo acá.
+   es la constante `VENTANA_HASTA`, definida acá y sólo acá. La ventana no
+   alcanza sola: al republicar, el organismo también corrige meses que quedan
+   dentro de ella (medido el 2026-09-28 sobre la edición de 2026). Por eso el
+   repositorio guarda la edición exacta que usó el trabajo.
 
 Se lee directamente de adentro del ZIP, sin descomprimir: son cientos de miles
 de filas por año y se recorren una sola vez.

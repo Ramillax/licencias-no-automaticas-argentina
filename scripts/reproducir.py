@@ -4,8 +4,8 @@ Reproduce el trabajo entero, de las fuentes originales al veredicto.
 
     python3 scripts/reproducir.py
 
-Baja las fuentes primarias de los organismos que las publican, reconstruye el
-universo de bienes de capital y el panel, corre los análisis y termina
+Comprueba las fuentes primarias (y baja de los organismos las que falten),
+reconstruye el universo de bienes de capital y el panel, corre los análisis y termina
 contrastando los resultados contra las cifras publicadas en la tesis.
 
 El único requisito es Python 3.8 o posterior. No hace falta instalar nada: los
@@ -17,8 +17,8 @@ Opciones
     --rapido      saltea el recuento de los 1,9 millones de registros al verificar
     --listar      muestra las etapas y no hace nada
 
-Qué tarda: la descarga depende de la conexión (59 MB) y el resto alrededor de
-un minuto en una máquina corriente.
+Qué tarda: alrededor de un minuto en una máquina corriente. Las fuentes viajan
+en el repositorio; sólo si falta alguna se baja, y eso depende de la conexión.
 """
 
 import argparse
@@ -40,7 +40,7 @@ if not sys.stdout.isatty():
 # (programa, argumentos, qué hace)
 ETAPAS = [
     ("descargar_fuentes.py", [],
-     "Descarga las fuentes primarias y las verifica por SHA-256"),
+     "Verifica las fuentes primarias y baja las que falten"),
     # --escribir, no el modo verificación: en un paquete recién descomprimido
     # estos seis archivos no existen todavía. Son producto derivado, no insumo.
     ("construir_universo.py", ["--escribir"],

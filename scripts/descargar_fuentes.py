@@ -159,7 +159,8 @@ def main():
                 # medida que cierra meses. La ventana temporal de construir_panel.py
                 # neutraliza el agregado; verificar.py dice qué cifra se mueve.
                 print(f"  {AMBAR}~ {FIN} {etiqueta:<28} {meta['bytes']/1e6:>7,.1f} MB  "
-                      f"{GRIS}bajó: el organismo republicó este archivo{FIN}")
+                      f"{GRIS}bajó: el organismo republicó este archivo. La edición del "
+                      f"trabajo viaja en el repositorio: git checkout -- {rel}{FIN}")
                 republicados += 1
                 continue
             bajados += 1
@@ -190,9 +191,11 @@ def main():
     if republicados:
         print(f"{AMBAR}Están las {total} fuentes. {republicados} ya no son la edición que usó el "
               f"trabajo:{FIN}")
-        print(f"{GRIS}  el INDEC reescribe el archivo del año en curso a medida que cierra meses.")
-        print(f"  La ventana temporal del panel (VENTANA_HASTA = {VENTANA_HASTA}, en indec.py) descarta")
-        print(f"  lo posterior, así que la cadena reproduce igual. verificar.py dice qué cifra se mueve.{FIN}")
+        print(f"{GRIS}  el INDEC reescribe el archivo del año en curso a medida que cierra meses, y al")
+        print(f"  hacerlo también corrige meses anteriores. La ventana (VENTANA_HASTA = {VENTANA_HASTA},")
+        print(f"  en indec.py) descarta lo posterior, pero no esas correcciones: con esta edición")
+        print(f"  alguna cifra puede moverse en el último decimal, y verificar.py dice cuál.")
+        print(f"  Para reproducir exacto, recuperá la edición del repositorio:  git checkout -- datos/{FIN}")
         return 0
     print(f"{VERDE}Están las {total} fuentes primarias y todas coinciden con el manifiesto.{FIN}")
     print(f"{GRIS}Para correr la cadena completa:  python3 {Path('scripts/reproducir.py')} --desde 2{FIN}")

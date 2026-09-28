@@ -97,12 +97,11 @@ transcripción viaja hecha y verificada por SHA-256; se documenta en
 python3 scripts/reproducir.py
 ```
 
-Eso hace todo: baja las fuentes de los organismos que las publican, reconstruye
-el universo de bienes de capital, arma el panel, corre los análisis y termina
-imprimiendo un veredicto.
+Eso hace todo: comprueba las fuentes, reconstruye el universo de bienes de capital,
+arma el panel, corre los análisis y termina imprimiendo un veredicto.
 
-La descarga son 59 MB y depende de la conexión. El resto tarda alrededor de un minuto
-en una máquina corriente. Si se interrumpe, se retoma:
+Las fuentes ya vienen en el repositorio, así que no hace falta conexión: tarda
+alrededor de un minuto en una máquina corriente. Si se interrumpe, se retoma:
 
 ```
 python3 scripts/reproducir.py --desde 4     # sigue desde la etapa 4
@@ -135,9 +134,11 @@ no forma parte de este repositorio, así que acá se saltea con un aviso.
 
 ## De dónde salen los datos
 
-Todo se baja en la primera etapa, de los organismos de origen, y se verifica por
-SHA-256 contra `datos/FUENTES.json`, que fija la **edición** de cada archivo y no
-solo su nombre:
+Son 154 archivos de dos organismos (58 MB), y **viajan en el repositorio en la edición
+exacta que usó el trabajo**. `datos/FUENTES.json` registra de cada uno la URL de origen
+y su SHA-256, que fija la **edición** y no solo el nombre. La primera etapa los
+comprueba contra ese manifiesto y **baja de los organismos sólo lo que falte**, por
+ejemplo si se borró un archivo:
 
 | Fuente | Qué es |
 |---|---|
@@ -145,13 +146,20 @@ solo su nombre:
 | Arancel Externo Común (Anexo I) | El nomenclador, de donde sale la marca que define qué es un bien de capital |
 | Res. SC 1/2022 y 26/2022, Anexo II | Las 147 páginas en imagen con las posiciones alcanzadas por licencias |
 
-### Un aviso ámbar en la primera etapa es normal
+### Por qué las fuentes viajan en el repositorio
 
-El INDEC **reescribe el archivo del año en curso** a medida que cierra meses, así
-que el de 2026 ya no es el que usó el trabajo. No es un problema: los programas
-fijan una ventana temporal explícita (`VENTANA_HASTA = "2026-06"`) y descartan lo
-posterior, de modo que la cadena reproduce igual. La etapa 1 lo informa en ámbar
-y sigue.
+El INDEC **reescribe el archivo del año en curso** a medida que cierra meses, y al
+hacerlo **corrige también meses anteriores**. Los programas fijan una ventana
+temporal (`VENTANA_HASTA = "2026-06"`, en `scripts/indec.py`) que descarta lo
+posterior, pero no esas correcciones. Medido el 2026-09-28: con la edición de 2026
+que publica hoy el INDEC, dos cifras del trabajo se mueven en el último decimal (la
+deriva de encadenamiento mensual, de 21,8 a 21,7, y la razón de cantidades de la
+dimensión D2 en el último tramo, de 122,8 a 122,6).
+
+La edición que usó el trabajo ya no está en el sitio del organismo: la copia de este
+repositorio es la que permite reproducir exacto. Si alguien baja la edición nueva, la
+etapa 1 lo avisa en ámbar y `verificar.py` dice qué cifra se movió; para volver a la
+del trabajo alcanza con `git checkout -- datos/`.
 
 ## Lo que viaja dentro del paquete
 
@@ -196,7 +204,7 @@ VII Enmienda (NCM 2022), posterior al arancel de 2017 que sirve de padrón.
 
 | | Programa | Qué hace |
 |---|---|---|
-| 1 | `descargar_fuentes.py` | Baja las fuentes primarias y las verifica por SHA-256 |
+| 1 | `descargar_fuentes.py` | Verifica las fuentes primarias por SHA-256 y baja de los organismos las que falten |
 | 2 | `construir_universo.py` | Delimita los bienes de capital y sus tres trayectorias regulatorias |
 | 3 | `descripciones_ncm.py` | Extrae del arancel la descripción y el arancel de cada posición |
 | 4 | `construir_panel.py` | Arma el panel posición-mes y las series agregadas |
@@ -225,7 +233,7 @@ Dos flujos de GitHub Actions corren los mismos programas en una máquina limpia:
 | Flujo | Cuándo | Qué comprueba |
 |---|---|---|
 | `regimen` | En cada cambio | Que todo compile con Python 3.8 y 3.12, que el lector del INDEC rechace formatos inesperados y que los dos CSV del régimen se regeneren **byte a byte** a partir de los insumos del repositorio |
-| `reproduccion` | A mano y una vez por mes | La cadena entera desde las fuentes oficiales hasta el veredicto de `verificar.py`, más las propiedades del índice. Si un organismo cambia o retira un archivo, se ve acá |
+| `reproduccion` | A mano y una vez por mes | La cadena entera, con las fuentes del repositorio, hasta el veredicto de `verificar.py`, más las propiedades del índice. Y aparte, que cada una de las 154 fuentes siga publicada en su URL oficial: si un organismo la retira, se ve acá |
 
 ## Dónde quedan los resultados
 
@@ -253,6 +261,8 @@ Para lo demás: **ramirosoler48@gmail.com**
 
 ## Licencia
 
-MIT para el código (ver `LICENSE`). **No cubre las fuentes primarias**, que son documentos
-públicos de organismos del Estado argentino y no se redistribuyen acá: los programas las
-descargan de sus sitios oficiales y cada una conserva sus propias condiciones de uso.
+MIT para el código (ver `LICENSE`). **No cubre las fuentes primarias** de `datos/`, que son
+publicaciones oficiales de acceso público del INDEC y del Boletín Oficial de la República
+Argentina. Se incluyen sin modificar, sólo para que el trabajo se pueda reproducir con la
+edición exacta que usó; cada una conserva sus propias condiciones de uso y su procedencia
+queda registrada en `datos/FUENTES.json`.

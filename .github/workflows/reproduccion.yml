@@ -1,6 +1,6 @@
-# La cadena entera, desde las fuentes oficiales hasta el veredicto de verificar.py.
-# Baja 59 MB de los organismos, así que no corre en cada cambio: a mano desde la
-# pestaña Actions, y una vez por mes para enterarse si una fuente cambió o se cayó.
+# La cadena entera, de las fuentes al veredicto de verificar.py, y aparte el
+# estado de las fuentes en los organismos. No corre en cada cambio: a mano desde
+# la pestaña Actions, y una vez por mes.
 name: reproduccion
 
 on:
@@ -10,6 +10,37 @@ on:
 
 jobs:
   reproducir:
+    # Con las fuentes del repositorio, en la edición exacta del trabajo: tiene
+    # que dar todo en verde, sin tocar la red.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: De las fuentes al veredicto
+        run: |
+          set -o pipefail
+          python scripts/reproducir.py 2>&1 | tee reproducir.log
+      - name: Las propiedades del índice de Törnqvist, sobre el panel real
+        run: python scripts/probar_indices.py
+      - name: Resumen legible sin iniciar sesión
+        if: failure()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("reproducir.log")
+          cola = p.read_text(encoding="utf-8").splitlines()[-40:] if p.exists() else ["(sin log)"]
+          texto = "\n".join(cola).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+          print(f"::error title=reproducir.py::{texto}")
+          PY
+
+  fuentes:
+    # Que cada una de las 154 fuentes siga publicada en su URL oficial. Vuelve a
+    # bajarlas todas: falla si alguna ya no está; una edición nueva (el INDEC
+    # republica el año en curso) se informa pero no es falla, porque el
+    # repositorio conserva la del trabajo.
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -17,7 +48,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: De las fuentes al veredicto
-        run: python scripts/reproducir.py
-      - name: Las propiedades del índice de Törnqvist, sobre el panel real
-        run: python scripts/probar_indices.py
+      - name: Las fuentes siguen en los organismos
+        run: |
+          set -o pipefail
+          python scripts/descargar_fuentes.py --forzar 2>&1 | tee fuentes.log
+      - name: Resumen legible sin iniciar sesión
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("fuentes.log")
+          cola = p.read_text(encoding="utf-8").splitlines()[-12:] if p.exists() else ["(sin log)"]
+          texto = "\n".join(cola).replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+          print(f"::notice title=fuentes::{texto}")
+          PY
