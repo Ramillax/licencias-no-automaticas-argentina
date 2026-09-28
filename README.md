@@ -59,6 +59,8 @@ además la integración continua (ver [Comprobación automática](#comprobación
 | `entrada` · `salida` | Fechas del régimen para esa posición; vacías en `G3` |
 | `descripcion_trayectoria` | La trayectoria en palabras |
 
+Cuatro posiciones de `G3` (`8448.51.00`, `8480.79.00`, `8543.30.00` y `8708.50.11`) figuran como nunca alcanzadas porque sus códigos de 2017 no aparecen en el anexo, pero estuvieron alcanzadas bajo los códigos en que las desdobló la VII Enmienda (NCM 2022). Se las mantiene en `G3` porque el trabajo no usa ese grupo como término de comparación.
+
 ### Los módulos importables
 
 | Módulo | Qué resuelve |
@@ -105,13 +107,13 @@ alrededor de un minuto en una máquina corriente. Si se interrumpe, se retoma:
 
 ```
 python3 scripts/reproducir.py --desde 4     # sigue desde la etapa 4
-python3 scripts/reproducir.py --listar      # muestra las ocho etapas
+python3 scripts/reproducir.py --listar      # muestra las nueve etapas
 ```
 
 ## Qué tiene que dar
 
-La última etapa contrasta cuarenta y tres cifras del trabajo contra lo que acaba de
-calcular, de los capítulos 3 al 7, y termina así:
+La última etapa contrasta cincuenta y nueve cifras del trabajo contra lo que acaba de
+calcular, de la introducción a las conclusiones, y termina así:
 
 ```
 Todo lo verificado coincide con lo publicado en el trabajo.
@@ -200,18 +202,19 @@ oficial descargado y reporta que 2.239 de los 2.261 códigos de los capítulos 8
 90 existen literalmente en el arancel. Los 22 restantes son desdoblamientos de la
 VII Enmienda (NCM 2022), posterior al arancel de 2017 que sirve de padrón.
 
-## Las ocho etapas
+## Las nueve etapas
 
 | | Programa | Qué hace |
 |---|---|---|
 | 1 | `descargar_fuentes.py` | Verifica las fuentes primarias por SHA-256 y baja de los organismos las que falten |
 | 2 | `construir_universo.py` | Delimita los bienes de capital y sus tres trayectorias regulatorias |
 | 3 | `descripciones_ncm.py` | Extrae del arancel la descripción y el arancel de cada posición |
-| 4 | `construir_panel.py` | Arma el panel posición-mes y las series agregadas |
-| 5 | `origenes.py` | Compone la participación por país de origen |
-| 6 | `analisis_grupos.py` | Compara las trayectorias regulatorias y sus robusteces |
-| 7 | `analisis_heterogeneidad.py` | Contrasta las cuatro dimensiones de heterogeneidad |
-| 8 | `verificar.py` | Contrasta todo lo anterior contra las cifras publicadas |
+| 4 | `cobertura_valor.py` | Mide qué fracción del valor importado alcanzaba cada listado |
+| 5 | `construir_panel.py` | Arma el panel posición-mes y las series agregadas |
+| 6 | `origenes.py` | Compone la participación por país de origen |
+| 7 | `analisis_grupos.py` | Compara las trayectorias regulatorias y sus robusteces |
+| 8 | `analisis_heterogeneidad.py` | Contrasta las cuatro dimensiones de heterogeneidad |
+| 9 | `verificar.py` | Contrasta todo lo anterior contra las cifras publicadas |
 
 Cada programa abre con una explicación de qué hace y por qué se decidió así, y
 los comentarios del código anotan las decisiones metodológicas, no la sintaxis.
@@ -237,7 +240,8 @@ Dos flujos de GitHub Actions corren los mismos programas en una máquina limpia:
 
 ## Dónde quedan los resultados
 
-En `datos/`. Los principales son `panel_bk_ncm_mes.csv` (el panel, una fila por
+En `datos/`. Los principales son `cobertura_por_valor.json` (qué fracción del valor
+importado alcanzaba cada listado, capítulo 3), `panel_bk_ncm_mes.csv` (el panel, una fila por
 posición y mes), `series_agregadas.json` y `series_por_grupo.json` (las series y
 los números índice) y `robustez_grupos.json` y `analisis_heterogeneidad.json`
 (los contrastes de los capítulos 6 y 7).

@@ -24,7 +24,7 @@ def ncm(c):
     return f"{c[:4]}.{c[4:6]}.{c[6:]}"
 
 
-cobertura = json.load(open(DATOS / "cobertura_por_valor.json", encoding="utf-8"))
+cobertura = json.load(open(DATOS / "cobertura_por_valor.json", encoding="utf-8"))["mensual"]
 agregadas = json.load(open(DATOS / "series_agregadas.json", encoding="utf-8"))
 grupos = json.load(open(DATOS / "series_por_grupo.json", encoding="utf-8"))
 robustez = json.load(open(DATOS / "robustez_grupos.json", encoding="utf-8"))
@@ -34,7 +34,8 @@ out = ["# Anexos", ""]
 # --------------------------------------------------------------- Anexo A
 # Resumen anual. La serie mensual son 66 filas que no se leen: la variación
 # entre meses es de composición del comercio, y lo que el lector necesita es el
-# nivel y el rango. La serie completa la sigue produciendo construir_panel.py.
+# nivel y el rango. La serie completa la produce cobertura_valor.py. El promedio
+# anual se pondera por valor, igual que el del período en el cuadro de 3.5.
 por_anio = {}
 for r in cobertura:
     por_anio.setdefault(r["periodo"][:4], []).append(r)
@@ -43,9 +44,10 @@ out += [
     "## Anexo A. Cobertura del régimen sobre el valor importado",
     "",
     "Fracción del valor FOB importado que corresponde a posiciones incluidas en cada uno de "
-    "los dos listados del Anexo II, promediada por año calendario. La variación entre meses "
-    "refleja cambios en la composición del comercio y no en el listado, de modo que se "
-    "informa el promedio anual; la serie mensual completa la produce `construir_panel.py`.",
+    "los dos listados del Anexo II, por año calendario y ponderada por valor. Los listados "
+    "se aplican fijos a todo el período, de modo que la variación entre años refleja cambios "
+    "en la composición del comercio y no en el listado. La serie mensual completa la produce "
+    "`scripts/cobertura_valor.py`.",
     "",
     "| Año | Todos los bienes, listado ago-22 | Todos los bienes, listado oct-22 | "
     "Bienes de capital, listado ago-22 | Bienes de capital, listado oct-22 |",
@@ -55,7 +57,11 @@ CLAVES_A = ("cob_todos_ago", "cob_todos_oct", "cob_bk_ago", "cob_bk_oct")
 for a in sorted(por_anio):
     filas = por_anio[a]
     etq = f"{a} (enero–junio)" if a == "2026" else a
-    prom = " | ".join(n(sum(x[k] for x in filas) / len(filas), 1) + " %" for k in CLAVES_A)
+    # Ponderado por valor: participación del valor alcanzado en el valor del año.
+    def pond(k):
+        base = "fob_bk" if "_bk_" in k else "fob_total"
+        return sum(x[k] * x[base] for x in filas) / sum(x[base] for x in filas)
+    prom = " | ".join(n(pond(k), 1) + " %" for k in CLAVES_A)
     out.append(f"| {etq} | {prom} |")
 
 bk_oct = [r["cob_bk_oct"] for r in cobertura]
@@ -187,19 +193,25 @@ out += ["", "### D.5 Transcripción de los anexos normativos", "",
         "84 a 90, que reúnen 2.261 posiciones, se transcribieron una segunda vez por un "
         "procedimiento de lectura distinto del reconocimiento óptico, y las dos listas se "
         "compararon entre sí por programa (`scripts/auditar_ocr.py`). Los dos "
-        "procedimientos coinciden en 2.260 de los 2.261 códigos: el único caso discordante "
-        "—un `8708.50.11` leído `8708.50.14`— produce un código inexistente en el "
+        "procedimientos coinciden en 2.260 de los 2.261 códigos. El único caso discordante, "
+        "un `8708.50.11` leído `8708.50.14`, produce un código inexistente en el "
         "nomenclador, de modo que el control 3 lo habría descartado igual. La discrepancia "
-        "es del 0,04 % y es detectable.", "",
+        "es del 0,04 %.", "",
         "### D.6 Programas", "",
         "Todos los cuadros del trabajo se generan programáticamente, en Python y desde los "
-        "archivos originales del INDEC y del Arancel Externo Común. Los programas, junto con "
-        "la reconstrucción del régimen en formato tabular, están publicados en "
-        "https://github.com/Ramillax/licencias-no-automaticas-argentina y se corren con una "
-        "sola orden: `python3 scripts/reproducir.py` descarga las fuentes de los organismos "
-        "que las editan, las verifica por su huella digital, rehace el panel y termina "
-        "contrastando contra este texto las cifras que produce.", "",
+        "archivos originales del INDEC y del Arancel Externo Común. Los programas, la "
+        "reconstrucción del régimen en formato tabular y las fuentes primarias en la edición "
+        "utilizada forman el paquete de replicación (Soler, 2026), que se corre con una sola "
+        "orden: `python3 scripts/reproducir.py` verifica cada fuente por su huella digital, "
+        "baja de los organismos solo las que falten, rehace el panel y termina contrastando "
+        "contra este texto las cifras que produce.", "",
         "| Programa | Produce |", "|---|---|",
+        "| `descargar_fuentes.py` | La verificación de las 154 fuentes primarias contra su "
+        "huella digital, y la descarga de las que falten |",
+        "| `construir_universo.py` | El universo de bienes de capital, las tres trayectorias "
+        "regulatorias y los dos listados del régimen en formato tabular |",
+        "| `cobertura_valor.py` | La cobertura del régimen sobre el valor importado, del "
+        "cuadro de 3.5 y del Anexo A |",
         "| `construir_panel.py` | El panel posición-mes, las series agregadas en tres "
         "frecuencias, los números índice en sus dos definiciones de celda y las series por "
         "trayectoria regulatoria |",
@@ -209,6 +221,10 @@ out += ["", "### D.5 Transcripción de los anexos normativos", "",
         "| `descripciones_ncm.py` | La descripción jerárquica de 10.205 de las 10.226 "
         "posiciones del arancel, con su alícuota y su marca BK o BIT |",
         "| `analisis_heterogeneidad.py` | Los contrastes por D1, D2, D3 y tipo de bien del capítulo 7 |",
+        "| `verificar.py` | El contraste de cada cifra publicada contra el dato y contra "
+        "el capítulo que la cita |",
+        "| `auditar_ocr.py` · `probar_indices.py` | La concordancia entre las dos "
+        "transcripciones de D.5 y las propiedades del índice de Törnqvist |",
         "| `generar_anexos.py` | Estos anexos, desde los archivos de resultados |",
         "| `md2pdf.py` | La composición del documento en formato académico |",
         ]

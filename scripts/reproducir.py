@@ -47,6 +47,8 @@ ETAPAS = [
      "Delimita los bienes de capital y sus tres trayectorias regulatorias"),
     ("descripciones_ncm.py", [],
      "Extrae del arancel la descripción y el AEC de cada posición"),
+    ("cobertura_valor.py", [],
+     "Mide qué fracción del valor importado alcanzaba cada listado"),
     ("construir_panel.py", [],
      "Arma el panel posición-mes y las series agregadas"),
     ("origenes.py", [],

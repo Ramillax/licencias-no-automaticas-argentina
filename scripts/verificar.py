@@ -14,7 +14,8 @@ Corre en cinco bloques y termina con un veredicto:
      transcripciones de los anexos de licencias.
 
   3. EL PANEL y 4. LOS RESULTADOS.  Compara lo que quedó escrito en cada
-     capítulo, del 4 al 7, contra lo que producen los programas.
+     capítulo, de la introducción a las conclusiones, contra lo que producen
+     los programas.
 
   5. EL TEXTO.  Comprueba que cada una de esas cifras siga apareciendo, tal cual,
      en el capítulo que la publica. Sin este bloque, una cifra editada a mano en
@@ -65,7 +66,8 @@ def linea(concepto, tesis, calculado, ok, nota="", en=None):
 
     `en` = (capítulo, literal o tupla de literales): dónde publica el texto esa
     cifra y cómo está escrita ahí, con coma decimal y punto de miles. Lo usa el
-    bloque 5 para cerrar el círculo del otro lado, texto contra constante.
+    bloque 5 para cerrar el círculo del otro lado, texto contra constante. Si la
+    cifra aparece en varios capítulos, `en` es una lista de esos pares.
 
     Por eso los literales de abajo no deben «arreglarse» para que pase la prueba:
     si una línea da ✗, lo que hay que corregir es el capítulo o el programa.
@@ -74,8 +76,7 @@ def linea(concepto, tesis, calculado, ok, nota="", en=None):
     print(f"  {marca}  {concepto:<48} {tesis:>16}  {calculado:>16}  {GRIS}{nota}{FIN}")
     if not ok:
         fallas.append(concepto)
-    if en:
-        cap, literales = en
+    for cap, literales in (en if isinstance(en, list) else [en] if en else []):
         citas.append((concepto, cap, (literales,) if isinstance(literales, str) else literales))
 
 
@@ -91,6 +92,11 @@ def leer_lista(path):
 def cerca(a, b):
     """Igualdad a un decimal, que es la precisión con que el texto publica."""
     return abs(a - b) < 0.05
+
+
+def coma(x, d=1):
+    """Una cifra como la escribe el texto: coma decimal."""
+    return f"{x:.{d}f}".replace(".", ",")
 
 
 # ---------------------------------------------------------------- bloque 1
@@ -205,6 +211,22 @@ def bloque_regimen():
     linea("las tres trayectorias suman el universo", "1,211",
           f"{len(g1|g2|g3):,}", (g1 | g2 | g3) == bk8490)
 
+    # 3.8: la discrepancia de nomenclatura no mueve el resultado. Agregando a seis
+    # dígitos, nivel estable frente a los desdoblamientos de la VII Enmienda.
+    oct6 = {c[:7] for c in oct_}                   # «8429.51» = seis dígitos con el punto
+    seis = 100 * len({c for c in bk8490 if c[:7] in oct6}) / len(bk8490)
+    linea("BK bajo LNA en oct-2022, a seis dígitos", "95,3 %", f"{seis:.1f} %",
+          cerca(seis, 95.3), en=("cap03", "95,3 %"))
+
+    # 3.5: cobertura sobre el valor importado, ponderada por valor en el período.
+    cob = json.loads((DATOS / "cobertura_por_valor.json").read_text())["periodo"]
+    for clave, etiqueta, esperado in (("cob_todos_ago", "total importado · listado ago-22", 32.4),
+                                      ("cob_todos_oct", "total importado · listado oct-22", 51.9),
+                                      ("cob_bk_ago", "bienes de capital · listado ago-22", 38.7),
+                                      ("cob_bk_oct", "bienes de capital · listado oct-22", 95.9)):
+        linea(f"cobertura por valor · {etiqueta}", f"{coma(esperado)} %", f"{cob[clave]:.1f} %",
+              cerca(cob[clave], esperado), en=("cap03", f"{coma(esperado)} %"))
+
 
 # ---------------------------------------------------------------- bloque 3 y 4
 def bloque_resultados():
@@ -222,16 +244,52 @@ def bloque_resultados():
     linea("filas con FOB > 0 y peso nulo", "0", f"{cob['filas_fob_sin_kg']}",
           cob["filas_fob_sin_kg"] == 0)
 
-    for frec, etiqueta, esperado, cap in (("mes__ncm", "mensual", 21.8, "anexos"),
-                                          ("trim__ncm", "trimestral", 5.8, "cap05"),
-                                          ("anio__ncm", "anual", 0.6, "anexos")):
+    for frec, etiqueta, esperado, caps in (("mes__ncm", "mensual", 21.8, ("anexos", "cap04", "cap08")),
+                                           ("trim__ncm", "trimestral", 5.8, ("cap05",)),
+                                           ("anio__ncm", "anual", 0.6, ("anexos",))):
         ix = ser["indices"][frec]
         ult = ix["periodos"][-1]
         deriva = round(ix["encadenado"][ult] - ix["base_primero"][ult], 1)
         linea(f"deriva de encadenamiento · {etiqueta}", f"{esperado:.1f}", f"{deriva:.1f}",
-              cerca(deriva, esperado), en=(cap, f"{esperado:.1f}".replace(".", ",")))
+              cerca(deriva, esperado), en=[(c, coma(esperado)) for c in caps])
+
+    # 4.6: cuántas posiciones aparea el índice anual contra la base 2021.
+    ap = [v["celdas_base_2021"] for a, v in ser["indices"]["anio__ncm"]["apareo"].items() if a != "2021"]
+    cobmin = min(v["cobertura_base_2021"] for a, v in ser["indices"]["anio__ncm"]["apareo"].items() if a != "2021")
+    linea("índice anual · posiciones apareadas (mín–máx)", "934–1,032", f"{min(ap)}–{max(ap):,}",
+          (min(ap), max(ap)) == (934, 1032) and cobmin > 0.99, en=("cap04", ("934", "1.032")))
+
+    # Valor y participación en el total importado, 2021 contra 2025 (1.8, 4.3, 5.7, 8.8.1).
+    anual = {s["periodo"]: s for s in ser["series"]["anio"]}
+    total = {}
+    for r in json.loads((DATOS / "cobertura_por_valor.json").read_text())["mensual"]:
+        total[r["periodo"][:4]] = total.get(r["periodo"][:4], 0.0) + r["fob_total"]
+    crec = 100 * (anual["2025"]["fob_usd"] / anual["2021"]["fob_usd"] - 1)
+    p21 = 100 * anual["2021"]["fob_usd"] / total["2021"]
+    p25 = 100 * anual["2025"]["fob_usd"] / total["2025"]
+    linea("valor BK · crecimiento 2021 → 2025", "54 %", f"{crec:.1f} %", round(crec) == 54,
+          en=[("cap01", "54 %"), ("cap05", "54 %"), ("cap08", "54 %")])
+    linea("participación BK en el total · 2021 → 2025", "10,4 → 13,2 %", f"{p21:.1f} → {p25:.1f} %",
+          cerca(p21, 10.4) and cerca(p25, 13.2),
+          en=[("cap01", ("10,4 %", "13,2 %")), ("cap08", ("10,4 %", "13,2 %"))])
 
     cabecera("4. LOS RESULTADOS — capítulos 5, 6 y 7")
+    # 5.4: el contraste de P1, 2023 contra 2025.
+    a23, a25, a21 = anual["2023"], anual["2025"], anual["2021"]
+    var = {
+        "índice de cantidad": 100 * (a25["idx_cantidad"] / a23["idx_cantidad"] - 1),
+        "índice de peso": 100 * (a25["kg_mensual"] / a23["kg_mensual"] - 1),
+        "valor unitario por posición": 100 * (a25["idx_precio"] / a23["idx_precio"] - 1),
+        "valor unitario por posición y origen":
+            100 * (a25["idx_precio_ctrl_origen"] / a23["idx_precio_ctrl_origen"] - 1),
+    }
+    for (etq, v), esperado in zip(var.items(), (16.7, 21.3, -5.3, 0.3)):
+        txt = ("+" if esperado > 0 else "−") + coma(abs(esperado)) + " %"
+        linea(f"P1 · 2023 → 2025 · {etq}", txt, f"{v:+.1f} %", cerca(v, esperado), en=("cap05", txt))
+    linea("P1 · rango de cantidades en las conclusiones", "+17 a +21 %",
+          f"{var['índice de cantidad']:+.0f} a {var['índice de peso']:+.0f} %",
+          round(var["índice de cantidad"]) == 17 and round(var["índice de peso"]) == 21,
+          en=("cap08", "+17 a +21 %"))
     ch = org["bloques"]["China"]
     for anio, esperado in (("2021", 48.4), ("2025", 61.3)):
         v = ch[anio]["share_kg"]
@@ -245,6 +303,17 @@ def bloque_resultados():
         v = rob["completo"]["ratio_por_tramo"][clave]["ratio"]
         linea(f"razón de cantidades G2/G1 · tramo {romano}", f"{esperado:.1f}", f"{v:.1f}",
               cerca(v, esperado), en=("cap06", f"{esperado:.1f}".replace(".", ",")))
+
+    # 6.6: las caídas de la razón entre tramos, en cada variante.
+    for variante, c1, c2 in (("cap84", 5.3, 17.3), ("sin_top5", 19.9, 12.8)):
+        t = [v["ratio"] for v in rob[variante]["ratio_por_tramo"].values()]
+        d1, d2 = round(t[0] - t[1], 1), round(t[1] - t[2], 1)
+        linea(f"robustez · {variante}: caídas I→II y II→III", f"{coma(c1)} / {coma(c2)}",
+              f"{d1} / {d2}", cerca(d1, c1) and cerca(d2, c2), en=("cap06", (coma(c1), coma(c2))))
+    ultimo = {v: [x["ratio"] for x in rob[v]["ratio_por_tramo"].values()][-1] for v in rob if "ratio_por_tramo" in rob[v]}
+    ninguna = all(t[2] <= t[1] for t in ([x["ratio"] for x in rob[v]["ratio_por_tramo"].values()] for v in ultimo))
+    linea("robustez · ninguna variante se recupera tras la abrogación", "sí",
+          "sí" if ninguna else "no", ninguna)
 
     for variante, etiqueta, n1, n2 in (("cap84", "solo capítulo 84", 146, 686),
                                        ("sin_top5", "sin las 5 mayores", 180, 960),
