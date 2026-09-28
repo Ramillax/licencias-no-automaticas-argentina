@@ -352,7 +352,7 @@ def bloque_resultados():
 # ---------------------------------------------------------------- bloque 5
 def bloque_texto():
     print("\n5. EL TEXTO — cada cifra de arriba, escrita tal cual en el capítulo que la publica")
-    if not BORRADORES.is_dir():
+    if not any(BORRADORES.glob("cap0*.md")):
         print(f"  {GRIS}··  salteado: el texto de la tesis no viaja en el paquete de replicación{FIN}")
         return
     textos = {}

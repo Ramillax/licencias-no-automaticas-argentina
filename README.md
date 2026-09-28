@@ -23,8 +23,9 @@ régimen.
 | **Los índices** | Números índice de Törnqvist de precio y cantidad, en dos definiciones de celda: por posición y por posición × país de origen |
 | **Los verificadores** | Programas que contrastan la transcripción contra el nomenclador, el recuento contra las tablas de control del INDEC y las propiedades matemáticas de los índices |
 
-Nada de eso viaja como dato estático: **son programas que lo reconstruyen desde las fuentes
-oficiales**, de modo que se puede auditar cada paso y adaptar a otro universo de posiciones.
+Los resultados no viajan como dato estático: **son programas que los reconstruyen desde las
+fuentes oficiales**, que sí vienen incluidas en la edición que usó el trabajo. Así se puede
+auditar cada paso y adaptar la cadena a otro universo de posiciones.
 
 ### Los datos, sin correr nada
 
@@ -219,15 +220,16 @@ VII Enmienda (NCM 2022), posterior al arancel de 2017 que sirve de padrón.
 Cada programa abre con una explicación de qué hace y por qué se decidió así, y
 los comentarios del código anotan las decisiones metodológicas, no la sintaxis.
 
-### Tres programas más, fuera de la cadena
+### Cuatro programas más, fuera de la cadena
 
-No hacen falta para reproducir los resultados: existen para auditarlos.
+No hacen falta para reproducir los resultados: existen para auditarlos o para componer el texto.
 
 | Programa | Qué comprueba |
 |---|---|
 | `auditar_ocr.py` | La concordancia entre las dos transcripciones del anexo, hechas por procedimientos de lectura distintos. **De acá sale la cifra de discrepancia que reporta el trabajo**, no de un número anotado. Con `--rehacer` vuelve a pasar el OCR |
 | `probar_indices.py` | Que el índice de Törnqvist esté bien implementado, verificando siete propiedades que la fórmula debe cumplir por construcción: identidad, proporcionalidad, reversión temporal y otras. Corre sobre los datos reales y usa la misma función que produce los resultados publicados |
 | `ocr_anexo.py` | Rehace la transcripción desde las imágenes. Lo único que necesita instalado |
+| `generar_anexos.py` | Los cuadros de los anexos del trabajo, en Markdown, desde los resultados de la cadena. En el repositorio los deja en `salida/anexos.md` |
 
 ## Comprobación automática
 

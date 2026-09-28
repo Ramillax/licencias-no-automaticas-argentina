@@ -11,7 +11,10 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos"
-DESTINO = RAIZ / "borradores" / "anexos.md"
+# Junto al texto de la tesis cuando está; en el paquete de replicación, que no
+# lo incluye, a salida/ (fuera del control de versiones).
+DESTINO = (RAIZ / "borradores" / "anexos.md" if (RAIZ / "borradores").is_dir()
+           else RAIZ / "salida" / "anexos.md")
 
 
 def n(x, d=1):
@@ -230,5 +233,6 @@ out += ["", "### D.5 Transcripción de los anexos normativos", "",
         ]
 
 
+DESTINO.parent.mkdir(parents=True, exist_ok=True)
 DESTINO.write_text("\n".join(out) + "\n", encoding="utf-8")
 print(f"anexos escritos: {DESTINO}  ({len(out)} líneas)")
